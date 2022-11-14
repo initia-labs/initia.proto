@@ -1,0 +1,3 @@
+[submodule "initia"]
+	path = initia
+	url = git@github.com:initia-labs/initia.git
