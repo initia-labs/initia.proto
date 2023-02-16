@@ -17,6 +17,6 @@ build:
 	cargo build
 
 publish:
-	npm publish
+	cargo publish
 
 .PHONY: all proto-gen format init build publish
