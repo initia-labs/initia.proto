@@ -12,3 +12,4 @@ keywords = ["initia"]
 prost = "0.11"
 prost-types = "0.11"
 tendermint-proto = "0.28"
+tonic = "0.8.3"

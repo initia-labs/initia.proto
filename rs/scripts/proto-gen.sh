@@ -2,7 +2,7 @@
 set -o errexit -o nounset -o pipefail
 command -v shellcheck >/dev/null && shellcheck "$0"
 
-export OUT_DIR="./src"
+export OUT_DIR="./src/proto"
 mkdir -p "$OUT_DIR"
 
 echo "Processing initia proto files ..."
@@ -12,9 +12,9 @@ export INITIA_THIRD_PARTY_DIR="../initia/third_party/proto"
 ## Path to this plugin, Note this must be an abolsute path on Windows (see #15)
 #PROTOC_GEN_TS_PROTO_PATH="./node_modules/.bin/protoc-gen-ts_proto"
 protoc \
-	--prost_out=${OUT_DIR}/prost \
-	--prost_opt=retain_enum_prefix=false \
-	--tonic_out=${OUT_DIR}/tonic \
+    --prost_out=${OUT_DIR} \
+    --prost_opt=retain_enum_prefix=false \
+    --tonic_out=${OUT_DIR} \
     --tonic_opt=no_include=true \
     --proto_path="$INITIA_DIR" \
     --proto_path="$INITIA_THIRD_PARTY_DIR" \
