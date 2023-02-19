@@ -15,7 +15,6 @@ protoc \
     --prost_out=${OUT_DIR} \
     --prost_opt=retain_enum_prefix=false \
     --tonic_out=${OUT_DIR} \
-    --tonic_opt=no_include=true \
     --proto_path="$INITIA_DIR" \
     --proto_path="$INITIA_THIRD_PARTY_DIR" \
     $(find ${INITIA_DIR} ${INITIA_THIRD_PARTY_DIR} -path -prune -o -name '*.proto' -print0 | xargs -0)

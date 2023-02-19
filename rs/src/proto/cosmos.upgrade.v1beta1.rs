@@ -132,4 +132,5 @@ pub struct QueryModuleVersionsResponse {
     #[prost(message, repeated, tag="1")]
     pub module_versions: ::prost::alloc::vec::Vec<ModuleVersion>,
 }
+include!("cosmos.upgrade.v1beta1.tonic.rs");
 // @@protoc_insertion_point(module)

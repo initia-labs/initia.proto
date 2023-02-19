@@ -321,4 +321,5 @@ pub struct IncentivizedAcknowledgement {
     #[prost(bool, tag="3")]
     pub underlying_app_success: bool,
 }
+include!("ibc.applications.fee.v1.tonic.rs");
 // @@protoc_insertion_point(module)

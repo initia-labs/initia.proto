@@ -37,4 +37,5 @@ pub struct QueryParamsResponse {
     #[prost(message, optional, tag="1")]
     pub param: ::core::option::Option<ParamChange>,
 }
+include!("cosmos.params.v1beta1.tonic.rs");
 // @@protoc_insertion_point(module)

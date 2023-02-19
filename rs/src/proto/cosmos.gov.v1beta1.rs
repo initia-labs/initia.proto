@@ -417,4 +417,5 @@ pub struct QueryTallyResultResponse {
     #[prost(message, optional, tag="1")]
     pub tally: ::core::option::Option<TallyResult>,
 }
+include!("cosmos.gov.v1beta1.tonic.rs");
 // @@protoc_insertion_point(module)

@@ -21,4 +21,5 @@ pub struct MsgVerifyInvariant {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct MsgVerifyInvariantResponse {
 }
+include!("cosmos.crisis.v1beta1.tonic.rs");
 // @@protoc_insertion_point(module)

@@ -105,4 +105,5 @@ pub struct GenesisState {
     #[prost(message, repeated, tag="2")]
     pub accounts: ::prost::alloc::vec::Vec<::prost_types::Any>,
 }
+include!("cosmos.auth.v1beta1.tonic.rs");
 // @@protoc_insertion_point(module)

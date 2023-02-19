@@ -152,4 +152,5 @@ pub struct GenesisState {
     #[prost(message, repeated, tag="1")]
     pub allowances: ::prost::alloc::vec::Vec<Grant>,
 }
+include!("cosmos.feegrant.v1beta1.tonic.rs");
 // @@protoc_insertion_point(module)

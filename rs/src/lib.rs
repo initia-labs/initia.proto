@@ -19,7 +19,6 @@ pub mod cosmos {
     pub mod auth {
         pub mod v1beta1 {
             include!("proto/cosmos.auth.v1beta1.rs");
-            include!("proto/cosmos.auth.v1beta1.tonic.rs");
         }
     }
 
@@ -27,7 +26,6 @@ pub mod cosmos {
     pub mod authz {
         pub mod v1beta1 {
             include!("proto/cosmos.authz.v1beta1.rs");
-            include!("proto/cosmos.authz.v1beta1.tonic.rs");
         }
     }
 
@@ -35,7 +33,6 @@ pub mod cosmos {
     pub mod bank {
         pub mod v1beta1 {
             include!("proto/cosmos.bank.v1beta1.rs");
-            include!("proto/cosmos.bank.v1beta1.tonic.rs");
         }
     }
 
@@ -69,12 +66,10 @@ pub mod cosmos {
         pub mod reflection {
             pub mod v1beta1 {
                 include!("proto/cosmos.base.reflection.v1beta1.rs");
-                include!("proto/cosmos.base.reflection.v1beta1.tonic.rs");
             }
 
             pub mod v2alpha1 {
                 include!("proto/cosmos.base.reflection.v2alpha1.rs");
-                include!("proto/cosmos.base.reflection.v2alpha1.tonic.rs");
             }
         }
 
@@ -99,7 +94,6 @@ pub mod cosmos {
         pub mod tendermint {
             pub mod v1beta1 {
                 include!("proto/cosmos.base.tendermint.v1beta1.rs");
-                include!("proto/cosmos.base.tendermint.v1beta1.tonic.rs");
             }
         }
     }
@@ -108,7 +102,6 @@ pub mod cosmos {
     pub mod crisis {
         pub mod v1beta1 {
             include!("proto/cosmos.crisis.v1beta1.rs");
-            include!("proto/cosmos.crisis.v1beta1.tonic.rs");
         }
     }
 
@@ -136,7 +129,6 @@ pub mod cosmos {
     pub mod distribution {
         pub mod v1beta1 {
             include!("proto/cosmos.distribution.v1beta1.rs");
-            include!("proto/cosmos.distribution.v1beta1.tonic.rs");
         }
     }
 
@@ -144,7 +136,6 @@ pub mod cosmos {
     pub mod evidence {
         pub mod v1beta1 {
             include!("proto/cosmos.evidence.v1beta1.rs");
-            include!("proto/cosmos.evidence.v1beta1.tonic.rs");
         }
     }
 
@@ -152,7 +143,6 @@ pub mod cosmos {
     pub mod feegrant {
         pub mod v1beta1 {
             include!("proto/cosmos.feegrant.v1beta1.rs");
-            include!("proto/cosmos.feegrant.v1beta1.tonic.rs");
         }
     }
 
@@ -167,7 +157,6 @@ pub mod cosmos {
     pub mod gov {
         pub mod v1beta1 {
             include!("proto/cosmos.gov.v1beta1.rs");
-            include!("proto/cosmos.gov.v1beta1.tonic.rs");
         }
     }
 
@@ -175,7 +164,6 @@ pub mod cosmos {
     pub mod mint {
         pub mod v1beta1 {
             include!("proto/cosmos.mint.v1beta1.rs");
-            include!("proto/cosmos.mint.v1beta1.tonic.rs");
         }
     }
 
@@ -183,7 +171,6 @@ pub mod cosmos {
     pub mod params {
         pub mod v1beta1 {
             include!("proto/cosmos.params.v1beta1.rs");
-            include!("proto/cosmos.params.v1beta1.tonic.rs");
         }
     }
 
@@ -191,7 +178,6 @@ pub mod cosmos {
     pub mod slashing {
         pub mod v1beta1 {
             include!("proto/cosmos.slashing.v1beta1.rs");
-            include!("proto/cosmos.slashing.v1beta1.tonic.rs");
         }
     }
 
@@ -199,7 +185,6 @@ pub mod cosmos {
     pub mod staking {
         pub mod v1beta1 {
             include!("proto/cosmos.staking.v1beta1.rs");
-            include!("proto/cosmos.staking.v1beta1.tonic.rs");
         }
     }
 
@@ -214,7 +199,6 @@ pub mod cosmos {
 
         pub mod v1beta1 {
             include!("proto/cosmos.tx.v1beta1.rs");
-            include!("proto/cosmos.tx.v1beta1.tonic.rs");
         }
     }
 
@@ -222,7 +206,6 @@ pub mod cosmos {
     pub mod upgrade {
         pub mod v1beta1 {
             include!("proto/cosmos.upgrade.v1beta1.rs");
-            include!("proto/cosmos.upgrade.v1beta1.tonic.rs");
         }
     }
 
@@ -230,7 +213,6 @@ pub mod cosmos {
     pub mod vesting {
         pub mod v1beta1 {
             include!("proto/cosmos.vesting.v1beta1.rs");
-            include!("proto/cosmos.vesting.v1beta1.tonic.rs");
         }
     }
 }
@@ -245,14 +227,12 @@ pub mod ibc {
             pub mod controller {
                 pub mod v1 {
                     include!("proto/ibc.applications.interchain_accounts.controller.v1.rs");
-                    include!("proto/ibc.applications.interchain_accounts.controller.v1.tonic.rs");
                 }
             }
 
             pub mod host {
                 pub mod v1 {
                     include!("proto/ibc.applications.interchain_accounts.host.v1.rs");
-                    include!("proto/ibc.applications.interchain_accounts.host.v1.tonic.rs");
                 }
             }
 
@@ -265,7 +245,6 @@ pub mod ibc {
         pub mod transfer {
             pub mod v1 {
                 include!("proto/ibc.applications.transfer.v1.rs");
-                include!("proto/ibc.applications.transfer.v1.tonic.rs");
             }
 
             pub mod v2 {
@@ -280,7 +259,6 @@ pub mod ibc {
         pub mod channel {
             pub mod v1 {
                 include!("proto/ibc.core.channel.v1.rs");
-                include!("proto/ibc.core.channel.v1.tonic.rs");
             }
         }
 
@@ -288,7 +266,6 @@ pub mod ibc {
         pub mod client {
             pub mod v1 {
                 include!("proto/ibc.core.client.v1.rs");
-                include!("proto/ibc.core.client.v1.tonic.rs");
             }
         }
 
@@ -303,7 +280,6 @@ pub mod ibc {
         pub mod connection {
             pub mod v1 {
                 include!("proto/ibc.core.connection.v1.rs");
-                include!("proto/ibc.core.connection.v1.tonic.rs");
             }
         }
 
@@ -353,20 +329,17 @@ pub mod initia {
     pub mod mint {
         pub mod v1 {
             include!("proto/initia.mint.v1.rs");
-            include!("proto/initia.mint.v1.tonic.rs");
         }
     }
     pub mod r#move {
         pub mod v1 {
             include!("proto/initia.move.v1.rs");
-            include!("proto/initia.move.v1.tonic.rs");
         }
     }
 
     pub mod mstaking{
         pub mod v1 {
             include!("proto/initia.mstaking.v1.rs");
-            include!("proto/initia.mstaking.v1.tonic.rs");
         }
     }
 }
@@ -374,7 +347,6 @@ pub mod initia {
 pub mod tendermint {
     pub mod abci {
         include!("proto/tendermint.abci.rs");
-        include!("proto/tendermint.abci.tonic.rs");
     }
 
     pub mod crypto {

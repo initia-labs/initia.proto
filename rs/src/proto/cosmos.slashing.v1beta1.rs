@@ -138,4 +138,5 @@ pub struct MissedBlock {
     #[prost(bool, tag="2")]
     pub missed: bool,
 }
+include!("cosmos.slashing.v1beta1.tonic.rs");
 // @@protoc_insertion_point(module)

@@ -289,4 +289,5 @@ pub struct SendAuthorization {
     #[prost(message, repeated, tag="1")]
     pub spend_limit: ::prost::alloc::vec::Vec<super::super::base::v1beta1::Coin>,
 }
+include!("cosmos.bank.v1beta1.tonic.rs");
 // @@protoc_insertion_point(module)
