@@ -131,4 +131,5 @@ pub struct Module {
     #[prost(string, tag="3")]
     pub sum: ::prost::alloc::string::String,
 }
+include!("cosmos.base.tendermint.v1beta1.tonic.rs");
 // @@protoc_insertion_point(module)

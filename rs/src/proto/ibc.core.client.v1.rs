@@ -372,4 +372,5 @@ pub struct MsgSubmitMisbehaviour {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct MsgSubmitMisbehaviourResponse {
 }
+include!("ibc.core.client.v1.tonic.rs");
 // @@protoc_insertion_point(module)

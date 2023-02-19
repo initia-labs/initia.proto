@@ -52,4 +52,5 @@ pub struct GenesisState {
     #[prost(message, optional, tag="2")]
     pub last_mint_timestamp: ::core::option::Option<::prost_types::Timestamp>,
 }
+include!("initia.mint.v1.tonic.rs");
 // @@protoc_insertion_point(module)

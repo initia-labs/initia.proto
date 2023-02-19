@@ -174,4 +174,5 @@ pub struct EventRevoke {
     #[prost(string, tag="4")]
     pub grantee: ::prost::alloc::string::String,
 }
+include!("cosmos.authz.v1beta1.tonic.rs");
 // @@protoc_insertion_point(module)

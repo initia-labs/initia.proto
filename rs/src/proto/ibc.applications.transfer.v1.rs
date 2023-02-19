@@ -131,4 +131,5 @@ pub struct MsgTransfer {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct MsgTransferResponse {
 }
+include!("ibc.applications.transfer.v1.tonic.rs");
 // @@protoc_insertion_point(module)

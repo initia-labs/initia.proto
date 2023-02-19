@@ -77,4 +77,5 @@ pub struct QueryAnnualProvisionsResponse {
     #[prost(bytes="vec", tag="1")]
     pub annual_provisions: ::prost::alloc::vec::Vec<u8>,
 }
+include!("cosmos.mint.v1beta1.tonic.rs");
 // @@protoc_insertion_point(module)

@@ -762,4 +762,5 @@ pub struct MsgUndelegateResponse {
     #[prost(message, optional, tag="1")]
     pub completion_time: ::core::option::Option<::prost_types::Timestamp>,
 }
+include!("cosmos.staking.v1beta1.tonic.rs");
 // @@protoc_insertion_point(module)

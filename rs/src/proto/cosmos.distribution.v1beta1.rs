@@ -453,4 +453,5 @@ pub struct MsgFundCommunityPool {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct MsgFundCommunityPoolResponse {
 }
+include!("cosmos.distribution.v1beta1.tonic.rs");
 // @@protoc_insertion_point(module)

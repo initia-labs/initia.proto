@@ -373,4 +373,5 @@ pub struct GenesisState {
     #[prost(message, optional, tag="4")]
     pub params: ::core::option::Option<Params>,
 }
+include!("ibc.core.connection.v1.tonic.rs");
 // @@protoc_insertion_point(module)
