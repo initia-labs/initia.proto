@@ -18,21 +18,24 @@ pub mod cosmos {
     /// Authentication of accounts and transactions.
     pub mod auth {
         pub mod v1beta1 {
-            include!("prost/cosmos.auth.v1beta1.rs");
+            include!("proto/cosmos.auth.v1beta1.rs");
+            include!("proto/cosmos.auth.v1beta1.tonic.rs");
         }
     }
 
     /// Granting of arbitrary privileges from one account to another.
     pub mod authz {
         pub mod v1beta1 {
-            include!("prost/cosmos.authz.v1beta1.rs");
+            include!("proto/cosmos.authz.v1beta1.rs");
+            include!("proto/cosmos.authz.v1beta1.tonic.rs");
         }
     }
 
     /// Balances.
     pub mod bank {
         pub mod v1beta1 {
-            include!("prost/cosmos.bank.v1beta1.rs");
+            include!("proto/cosmos.bank.v1beta1.rs");
+            include!("proto/cosmos.bank.v1beta1.tonic.rs");
         }
     }
 
@@ -44,56 +47,59 @@ pub mod cosmos {
         /// (the blockchain), and the state machine (the application).
         pub mod abci {
             pub mod v1beta1 {
-                include!("prost/cosmos.base.abci.v1beta1.rs");
+                include!("proto/cosmos.base.abci.v1beta1.rs");
             }
         }
 
         /// Key-value pairs.
         pub mod kv {
             pub mod v1beta1 {
-                include!("prost/cosmos.base.kv.v1beta1.rs");
+                include!("proto/cosmos.base.kv.v1beta1.rs");
             }
         }
 
         /// Query support.
         pub mod query {
             pub mod v1beta1 {
-                include!("prost/cosmos.base.query.v1beta1.rs");
+                include!("proto/cosmos.base.query.v1beta1.rs");
             }
         }
 
         /// Reflection support.
         pub mod reflection {
             pub mod v1beta1 {
-                include!("prost/cosmos.base.reflection.v1beta1.rs");
+                include!("proto/cosmos.base.reflection.v1beta1.rs");
+                include!("proto/cosmos.base.reflection.v1beta1.tonic.rs");
             }
 
             pub mod v2alpha1 {
-                include!("prost/cosmos.base.reflection.v2alpha1.rs");
+                include!("proto/cosmos.base.reflection.v2alpha1.rs");
+                include!("proto/cosmos.base.reflection.v2alpha1.tonic.rs");
             }
         }
 
         /// Snapshots containing Tendermint state sync info.
         pub mod snapshots {
             pub mod v1beta1 {
-                include!("prost/cosmos.base.snapshots.v1beta1.rs");
+                include!("proto/cosmos.base.snapshots.v1beta1.rs");
             }
         }
 
         /// Data structure that holds the state of the application.
         pub mod store {
             pub mod v1beta1 {
-                include!("prost/cosmos.base.store.v1beta1.rs");
+                include!("proto/cosmos.base.store.v1beta1.rs");
             }
         }
 
         pub mod v1beta1 {
-            include!("prost/cosmos.base.v1beta1.rs");
+            include!("proto/cosmos.base.v1beta1.rs");
         }
 
         pub mod tendermint {
             pub mod v1beta1 {
-                include!("prost/cosmos.base.tendermint.v1beta1.rs");
+                include!("proto/cosmos.base.tendermint.v1beta1.rs");
+                include!("proto/cosmos.base.tendermint.v1beta1.tonic.rs");
             }
         }
     }
@@ -101,7 +107,8 @@ pub mod cosmos {
     /// Crisis handling
     pub mod crisis {
         pub mod v1beta1 {
-            include!("prost/cosmos.crisis.v1beta1.rs");
+            include!("proto/cosmos.crisis.v1beta1.rs");
+            include!("proto/cosmos.crisis.v1beta1.tonic.rs");
         }
     }
 
@@ -109,82 +116,90 @@ pub mod cosmos {
     pub mod crypto {
         /// Multi-signature support.
         pub mod multisig {
-            include!("prost/cosmos.crypto.multisig.rs");
+            include!("proto/cosmos.crypto.multisig.rs");
             pub mod v1beta1 {
-                include!("prost/cosmos.crypto.multisig.v1beta1.rs");
+                include!("proto/cosmos.crypto.multisig.v1beta1.rs");
             }
         }
         pub mod ed25519 {
-            include!("prost/cosmos.crypto.ed25519.rs");
+            include!("proto/cosmos.crypto.ed25519.rs");
         }
         pub mod secp256k1 {
-            include!("prost/cosmos.crypto.secp256k1.rs");
+            include!("proto/cosmos.crypto.secp256k1.rs");
         }
         pub mod secp256r1 {
-            include!("prost/cosmos.crypto.secp256r1.rs");
+            include!("proto/cosmos.crypto.secp256r1.rs");
         }
     }
 
     /// Messages and services handling token distribution
     pub mod distribution {
         pub mod v1beta1 {
-            include!("prost/cosmos.distribution.v1beta1.rs");
+            include!("proto/cosmos.distribution.v1beta1.rs");
+            include!("proto/cosmos.distribution.v1beta1.tonic.rs");
         }
     }
 
     /// Messages and services handling evidence
     pub mod evidence {
         pub mod v1beta1 {
-            include!("prost/cosmos.evidence.v1beta1.rs");
+            include!("proto/cosmos.evidence.v1beta1.rs");
+            include!("proto/cosmos.evidence.v1beta1.tonic.rs");
         }
     }
 
     /// Allows accounts to grant fee allowances and to use fees from their accounts.
     pub mod feegrant {
         pub mod v1beta1 {
-            include!("prost/cosmos.feegrant.v1beta1.rs");
+            include!("proto/cosmos.feegrant.v1beta1.rs");
+            include!("proto/cosmos.feegrant.v1beta1.tonic.rs");
         }
     }
 
     /// Messages and services handling gentx's
     pub mod genutil {
         pub mod v1beta1 {
-            include!("prost/cosmos.genutil.v1beta1.rs");
+            include!("proto/cosmos.genutil.v1beta1.rs");
         }
     }
 
     /// Messages and services handling governance
     pub mod gov {
         pub mod v1beta1 {
-            include!("prost/cosmos.gov.v1beta1.rs");
+            include!("proto/cosmos.gov.v1beta1.rs");
+            include!("proto/cosmos.gov.v1beta1.tonic.rs");
         }
     }
 
     /// Messages and services handling minting
     pub mod mint {
         pub mod v1beta1 {
-            include!("prost/cosmos.mint.v1beta1.rs");
+            include!("proto/cosmos.mint.v1beta1.rs");
+            include!("proto/cosmos.mint.v1beta1.tonic.rs");
         }
     }
 
     /// Messages and services handling chain parameters
     pub mod params {
         pub mod v1beta1 {
-            include!("prost/cosmos.params.v1beta1.rs");
+            include!("proto/cosmos.params.v1beta1.rs");
+            include!("proto/cosmos.params.v1beta1.tonic.rs");
         }
     }
 
     /// Handling slashing parameters and unjailing
     pub mod slashing {
         pub mod v1beta1 {
-            include!("prost/cosmos.slashing.v1beta1.rs");
+            include!("proto/cosmos.slashing.v1beta1.rs");
+            include!("proto/cosmos.slashing.v1beta1.tonic.rs");
         }
     }
 
     /// Proof-of-Stake layer for public blockchains.
     pub mod staking {
         pub mod v1beta1 {
-            include!("prost/cosmos.staking.v1beta1.rs");
+            include!("proto/cosmos.staking.v1beta1.rs");
+            include!("proto/cosmos.staking.v1beta1.tonic.rs");
         }
     }
 
@@ -193,26 +208,29 @@ pub mod cosmos {
         /// Transaction signing support.
         pub mod signing {
             pub mod v1beta1 {
-                include!("prost/cosmos.tx.signing.v1beta1.rs");
+                include!("proto/cosmos.tx.signing.v1beta1.rs");
             }
         }
 
         pub mod v1beta1 {
-            include!("prost/cosmos.tx.v1beta1.rs");
+            include!("proto/cosmos.tx.v1beta1.rs");
+            include!("proto/cosmos.tx.v1beta1.tonic.rs");
         }
     }
 
     /// Services for the upgrade module.
     pub mod upgrade {
         pub mod v1beta1 {
-            include!("prost/cosmos.upgrade.v1beta1.rs");
+            include!("proto/cosmos.upgrade.v1beta1.rs");
+            include!("proto/cosmos.upgrade.v1beta1.tonic.rs");
         }
     }
 
     /// Services and tx's for the vesting module.
     pub mod vesting {
         pub mod v1beta1 {
-            include!("prost/cosmos.vesting.v1beta1.rs");
+            include!("proto/cosmos.vesting.v1beta1.rs");
+            include!("proto/cosmos.vesting.v1beta1.tonic.rs");
         }
     }
 }
@@ -226,29 +244,32 @@ pub mod ibc {
         pub mod interchain_accounts {
             pub mod controller {
                 pub mod v1 {
-                    include!("prost/ibc.applications.interchain_accounts.controller.v1.rs");
+                    include!("proto/ibc.applications.interchain_accounts.controller.v1.rs");
+                    include!("proto/ibc.applications.interchain_accounts.controller.v1.tonic.rs");
                 }
             }
 
             pub mod host {
                 pub mod v1 {
-                    include!("prost/ibc.applications.interchain_accounts.host.v1.rs");
+                    include!("proto/ibc.applications.interchain_accounts.host.v1.rs");
+                    include!("proto/ibc.applications.interchain_accounts.host.v1.tonic.rs");
                 }
             }
 
             pub mod v1 {
-                include!("prost/ibc.applications.interchain_accounts.v1.rs");
+                include!("proto/ibc.applications.interchain_accounts.v1.rs");
             }
         }
 
         /// Transfer support.
         pub mod transfer {
             pub mod v1 {
-                include!("prost/ibc.applications.transfer.v1.rs");
+                include!("proto/ibc.applications.transfer.v1.rs");
+                include!("proto/ibc.applications.transfer.v1.tonic.rs");
             }
 
             pub mod v2 {
-                include!("prost/ibc.applications.transfer.v2.rs");
+                include!("proto/ibc.applications.transfer.v2.rs");
             }
         }
     }
@@ -258,35 +279,38 @@ pub mod ibc {
         /// IBC channels.
         pub mod channel {
             pub mod v1 {
-                include!("prost/ibc.core.channel.v1.rs");
+                include!("proto/ibc.core.channel.v1.rs");
+                include!("proto/ibc.core.channel.v1.tonic.rs");
             }
         }
 
         /// IBC client.
         pub mod client {
             pub mod v1 {
-                include!("prost/ibc.core.client.v1.rs");
+                include!("proto/ibc.core.client.v1.rs");
+                include!("proto/ibc.core.client.v1.tonic.rs");
             }
         }
 
         /// IBC commitments.
         pub mod commitment {
             pub mod v1 {
-                include!("prost/ibc.core.commitment.v1.rs");
+                include!("proto/ibc.core.commitment.v1.rs");
             }
         }
 
         /// IBC connections.
         pub mod connection {
             pub mod v1 {
-                include!("prost/ibc.core.connection.v1.rs");
+                include!("proto/ibc.core.connection.v1.rs");
+                include!("proto/ibc.core.connection.v1.tonic.rs");
             }
         }
 
         /// IBC types.
         pub mod types {
             pub mod v1 {
-                include!("prost/ibc.core.types.v1.rs");
+                include!("proto/ibc.core.types.v1.rs");
             }
         }
     }
@@ -295,21 +319,21 @@ pub mod ibc {
     pub mod lightclients {
         pub mod localhost {
             pub mod v1 {
-                include!("prost/ibc.lightclients.localhost.v1.rs");
+                include!("proto/ibc.lightclients.localhost.v1.rs");
             }
         }
         pub mod solomachine {
             pub mod v1 {
-                include!("prost/ibc.lightclients.solomachine.v1.rs");
+                include!("proto/ibc.lightclients.solomachine.v1.rs");
             }
 
             pub mod v2 {
-                include!("prost/ibc.lightclients.solomachine.v2.rs");
+                include!("proto/ibc.lightclients.solomachine.v2.rs");
             }
         }
         pub mod tendermint {
             pub mod v1 {
-                include!("prost/ibc.lightclients.tendermint.v1.rs");
+                include!("proto/ibc.lightclients.tendermint.v1.rs");
             }
         }
     }
@@ -317,53 +341,57 @@ pub mod ibc {
 
 /// ICS23 protobuf definitions.
 pub mod ics23 {
-    include!("prost/ics23.rs");
+    include!("proto/ics23.rs");
 }
 
 pub mod initia {
     pub mod distribution {
         pub mod v1 {
-            include!("prost/initia.distribution.v1.rs");
+            include!("proto/initia.distribution.v1.rs");
         }
     }
     pub mod mint {
         pub mod v1 {
-            include!("prost/initia.mint.v1.rs");
+            include!("proto/initia.mint.v1.rs");
+            include!("proto/initia.mint.v1.tonic.rs");
         }
     }
     pub mod r#move {
         pub mod v1 {
-            include!("prost/initia.move.v1.rs");
+            include!("proto/initia.move.v1.rs");
+            include!("proto/initia.move.v1.tonic.rs");
         }
     }
 
     pub mod mstaking{
         pub mod v1 {
-            include!("prost/initia.mstaking.v1.rs");
+            include!("proto/initia.mstaking.v1.rs");
+            include!("proto/initia.mstaking.v1.tonic.rs");
         }
     }
 }
 
 pub mod tendermint {
     pub mod abci {
-        include!("prost/tendermint.abci.rs");
+        include!("proto/tendermint.abci.rs");
+        include!("proto/tendermint.abci.tonic.rs");
     }
 
     pub mod crypto {
-        include!("prost/tendermint.crypto.rs");
+        include!("proto/tendermint.crypto.rs");
     }
     pub mod libs {
         pub mod bits {
-            include!("prost/tendermint.libs.bits.rs");
+            include!("proto/tendermint.libs.bits.rs");
         }
     }
     pub mod p2p {
-        include!("prost/tendermint.p2p.rs");
+        include!("proto/tendermint.p2p.rs");
     }
     pub mod types {
-        include!("prost/tendermint.types.rs");
+        include!("proto/tendermint.types.rs");
     }
     pub mod version {
-        include!("prost/tendermint.version.rs");
+        include!("proto/tendermint.version.rs");
     }
 }
