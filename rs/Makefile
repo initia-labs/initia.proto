@@ -5,8 +5,8 @@ init:
 	git submodule init
 	git submodule update --remote
 
-	@echo "Install proto compiler..."
-	cargo install protoc-gen-prost
+	@echo "Install proto compilers..."
+	cargo install protoc-gen-prost protoc-gen-tonic
 
 
 proto-gen: 
