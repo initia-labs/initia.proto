@@ -343,27 +343,3 @@ pub mod initia {
         }
     }
 }
-
-pub mod tendermint {
-    pub mod abci {
-        include!("proto/tendermint.abci.rs");
-    }
-
-    pub mod crypto {
-        include!("proto/tendermint.crypto.rs");
-    }
-    pub mod libs {
-        pub mod bits {
-            include!("proto/tendermint.libs.bits.rs");
-        }
-    }
-    pub mod p2p {
-        include!("proto/tendermint.p2p.rs");
-    }
-    pub mod types {
-        include!("proto/tendermint.types.rs");
-    }
-    pub mod version {
-        include!("proto/tendermint.version.rs");
-    }
-}
