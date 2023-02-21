@@ -11,7 +11,7 @@ init:
 
 proto-gen: 
 	@echo "Generating Protobuf files"
-	export OUT_DIR="./src/proto"
+	@export OUT_DIR="./src/proto"
 	@export INITIA_DIR="../initia/proto"
 	@export INITIA_THIRD_PARTY_DIR="../initia/third_party/proto"
 	cargo build

@@ -64,6 +64,7 @@ fn main() {
 
     let temp_initia_dir = tmp_build_dir.join("initia");
     fs::create_dir_all(&temp_initia_dir).unwrap();
+    fs::create_dir_all(output_dir.as_path()).unwrap();
 
     set_initia_version(&temp_initia_dir);
     compile_initia_protos_and_services(&temp_initia_dir);
