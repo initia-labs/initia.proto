@@ -13,7 +13,7 @@ impl TypeUrl for cosmos::bank::v1beta1::MsgSend {
 impl TypeUrl for cosmos::bank::v1beta1::MsgMultiSend {
     const TYPE_URL: &'static str = "/cosmos.bank.v1beta1.MsgMultiSend";
 }
-
+ 
 impl TypeUrl for cosmos::distribution::v1beta1::MsgSetWithdrawAddress {
     const TYPE_URL: &'static str = "/cosmos.distribution.v1beta1.MsgSetWithdrawAddress";
 }
