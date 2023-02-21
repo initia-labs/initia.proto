@@ -12,7 +12,17 @@ keywords = ["initia"]
 prost = "0.11"
 prost-types = "0.11"
 tendermint-proto = "0.28"
-tonic = "0.8.3"
+# Optional dependencies
+tonic = { version = "0.8.3", optional = true, default-features = false, features = ["codegen", "prost"] }
+
+[features]
+default = ["grpc-transport"]
+grpc = ["tonic"]
+grpc-transport = ["grpc", "tonic/transport"]
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
 
 [build-dependencies]
 prost = "0.11"
