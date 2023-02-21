@@ -1,4 +1,4 @@
-all: init proto-gen format
+all: init proto-gen
 
 init:
 	@echo "Pull External Protofiles"
@@ -12,11 +12,9 @@ init:
 proto-gen: 
 	@echo "Generating Protobuf files"
 	export OUT_DIR="./src/proto"
-	echo "Processing initia proto files ..."
 	@export INITIA_DIR="../initia/proto"
 	@export INITIA_THIRD_PARTY_DIR="../initia/third_party/proto"
 	cargo build
-	#./scripts/proto-gen.sh
 
 build: 
 	cargo build
@@ -24,4 +22,4 @@ build:
 publish:
 	cargo publish
 
-.PHONY: all proto-gen format init build publish
+.PHONY: all proto-gen init build publish
