@@ -25,7 +25,7 @@ const INITIA_REV: &str = "main";
 // working directory.
 
 /// The directory generated cosmos-sdk proto files go into in this repo
-const OUT_DIR: &str = "./src/proto";
+const OUT_DIR: &str = "./proto";
 /// Directory where the cosmos-sdk submodule is located
 const INITIA_DIR: &str = "../initia";
 /// A temporary directory for proto building

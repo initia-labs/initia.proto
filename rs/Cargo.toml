@@ -29,6 +29,6 @@ prost = "0.11"
 prost-types = "0.11"
 regex = "1.7.1"
 tendermint-proto = "0.28"
-tonic = "0.8.3"
+tonic = { version = "0.8.3", optional = true, default-features = false, features = ["codegen", "prost"] }
 tonic-build = "0.8.3"
 walkdir = "2.3.2"
