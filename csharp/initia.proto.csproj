@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Protobuf_NoWarnMissingExpected>true</Protobuf_NoWarnMissingExpected>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Grpc.Tools" Version="2.54.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <Protobuf 
+    GrpcServices="Both" 
+    GrpcOutputDir="src/%(RecursiveDir)"
+    OutputDir="src/%(RecursiveDir)"
+    OutputOptions="file_extension=.g.cs,serializable"
+    Include="$(INITIA_DIR)/**/*.proto;$(INITIA_THIRD_PARTY_DIR)/**/*.proto"
+    AdditionalImportDirs="$(INITIA_DIR);$(INITIA_THIRD_PARTY_DIR)"
+    Access="public"
+    CompileOutputs="true"
+    ProtoCompile="true"
+    />
+  </ItemGroup>
+
+</Project>

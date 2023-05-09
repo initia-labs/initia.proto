@@ -14,15 +14,8 @@ set -o errexit -o nounset -o pipefail
 mkdir -p "$OUT_DIR"
 
 echo "Processing initia proto files ..."
-INITIA_DIR="../initia/proto"
-INITIA_THIRD_PARTY_DIR="../initia/third_party/proto"
 
-protoc \
-  --plugin=protoc-gen-grpc=${CSHARP_PLUGIN} \
-  --csharp_out="${OUT_DIR}" \
-  --csharp_opt=file_extension=.g.cs,serializable \
-  --grpc_out="${OUT_DIR}" \
-  --grpc_opt=no_server \
-  --proto_path="$INITIA_DIR" \
-  --proto_path="$INITIA_THIRD_PARTY_DIR" \
-  $(find ${INITIA_DIR} ${INITIA_THIRD_PARTY_DIR} -path -prune -o -name '*.proto' -print0 | xargs -0)
+GRPC_PROTOC_PLUGIN=${CSHARP_PLUGIN} \
+INITIA_DIR=`realpath ../initia/proto` \
+INITIA_THIRD_PARTY_DIR=`realpath ../initia/third_party/proto` \
+  dotnet build
