@@ -13,9 +13,9 @@ proto-gen:
 	./scripts/proto-gen.sh
 
 build:
-	npm build
+	dotnet build
 
 publish:
-	npm publish
+	dotnet publish
 
 .PHONY: all proto-gen format init build publish
