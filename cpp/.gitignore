@@ -1,0 +1,16 @@
+node_modules
+
+.vscode/
+
+/build/
+/confio/
+/cosmos/
+/cosmos_proto/
+/gogoproto/
+/google/
+/ibc/
+/initia/
+/intertx/
+/tendermint/
+
+/src/
