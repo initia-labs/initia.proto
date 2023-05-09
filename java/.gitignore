@@ -15,7 +15,11 @@ node_modules
 
 /src/
 /grpc/src
+/grpc/build
+/grpc/grpc
 /kotlin/src
+/kotlin/build
+/kotlin/grpc
 
 # Ignore Gradle project-specific cache directory
 .gradle
