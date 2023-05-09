@@ -13,7 +13,7 @@ proto-gen:
 	./scripts/proto-gen.sh
 
 build:
-	dotnet build
+	@echo "build..."
 
 publish:
 	dotnet publish
