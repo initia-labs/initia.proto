@@ -1,12 +1,9 @@
-all: init proto-gen #format
+all: init proto-gen
 
 init:
 	@echo "Pull External Protofiles"
 	git submodule init
 	git submodule update --remote
-
-format:
-	npm run format
 
 proto-gen:
 	@echo "Generating Protobuf files"
