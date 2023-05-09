@@ -7,12 +7,16 @@ init:
 
 proto-gen:
 	@echo "Generating Protobuf files"
-	./scripts/proto-gen.sh
-
-build:
-	@echo "Building..."
+	./gradlew cleanProto generateProto
 
 publish:
 	@echo "Publishing..."
+	./gradlew publish
+
+clean:
+	./gradlew cleanProto
+	@rm -rf src
+	@rm -rf grpc/src
+	@rm -rf kotlin/src kotlin/grpc
 
 .PHONY: all proto-gen format init build publish
