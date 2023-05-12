@@ -1,4 +1,4 @@
-all: init proto-gen
+all: init proto-gen build
 
 init:
 	@echo "Pull External Protofiles"
@@ -11,8 +11,8 @@ proto-gen:
 
 build:
 	@echo "build..."
-	#dotnet pack --include-symbols --include-source --no-build
-	dotnet pack --no-build
+	@#dotnet pack --include-symbols --include-source --no-build
+	@dotnet pack --no-build
 
 publish:
 	dotnet publish
