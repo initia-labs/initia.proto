@@ -11,6 +11,8 @@ proto-gen:
 
 build:
 	@echo "build..."
+	#dotnet pack --include-symbols --include-source --no-build
+	dotnet pack --no-build
 
 publish:
 	dotnet publish
