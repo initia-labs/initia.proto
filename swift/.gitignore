@@ -17,4 +17,8 @@ node_modules
 ./build
 
 xcuserdata/
-build/
+.build/
+/.build/
+
+xcuserdata/
+.swiftpm/
