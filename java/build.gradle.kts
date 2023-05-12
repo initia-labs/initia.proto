@@ -16,7 +16,7 @@ allprojects {
         plugin("maven-publish")
     }
 
-    group = "initia"
+    group = "initiaProto"
     version = "0.1.0"
 
     repositories {
@@ -27,14 +27,6 @@ allprojects {
         generatedFilesBaseDir = "${projectDir.absolutePath}/src"
     }
 
-    sourceSets {
-        main {
-            proto {
-                srcDir("${rootProject.rootDir.parent}/initia/third_party/proto")
-                srcDir("${rootProject.rootDir.parent}/initia/proto")
-            }
-        }
-    }
 
     java {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -52,7 +44,7 @@ allprojects {
             .forEach { it.outputs.upToDateWhen { false } }
     }
 
-    
+
     publishing {
         publications {
             create<MavenPublication>("initiaProto") {
@@ -75,6 +67,7 @@ dependencies {
 
     api("com.google.protobuf:protobuf-java:$protobufVersion")
     api("com.google.protobuf:protobuf-java-util:$protobufVersion")
+    api("com.google.protobuf:protobuf-javalite:$protobufVersion")
 
     compileOnly("org.apache.tomcat:annotations-api:6.0.53")
 }

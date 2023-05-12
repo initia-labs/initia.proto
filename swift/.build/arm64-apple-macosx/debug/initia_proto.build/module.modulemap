@@ -1,0 +1,4 @@
+module initia_proto {
+    header "/Users/geoff/devel/initia.proto/swift/.build/arm64-apple-macosx/debug/initia_proto.build/initia.proto-Swift.h"
+    requires objc
+}

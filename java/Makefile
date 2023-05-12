@@ -1,4 +1,4 @@
-all: init proto-gen
+all: init clean proto-gen
 
 init:
 	@echo "Pull External Protofiles"
