@@ -15,3 +15,6 @@ node_modules
 
 /src/
 ./build
+
+xcuserdata/
+build/
