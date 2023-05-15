@@ -20,3 +20,9 @@ make init
 ```sh
 make proto-gen
 ```
+
+### Building package
+
+```sh
+make build
+```
