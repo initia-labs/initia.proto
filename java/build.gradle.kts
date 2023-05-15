@@ -1,8 +1,8 @@
-import com.google.protobuf.gradle.*
-import org.gradle.kotlin.dsl.proto
+import com.google.protobuf.gradle.protobuf
 
 plugins {
     id("java-library")
+    id("signing")
     id("maven-publish")
     kotlin("jvm") version "1.8.21" apply false
     id("com.google.protobuf") version "0.9.3"
@@ -16,7 +16,7 @@ allprojects {
         plugin("maven-publish")
     }
 
-    group = "initiaProto"
+    group = "initia"
     version = "0.1.0"
 
     repositories {
@@ -27,12 +27,21 @@ allprojects {
         generatedFilesBaseDir = "${projectDir.absolutePath}/src"
     }
 
+    sourceSets {
+        main {
+            proto {
+                srcDir("${rootProject.rootDir.parent}/initia/third_party/proto")
+                srcDir("${rootProject.rootDir.parent}/initia/proto")
+            }
+        }
+    }
 
     java {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
 
         withSourcesJar()
+        withJavadocJar()
     }
 
     tasks.getByName<Test>("test") {
@@ -44,22 +53,45 @@ allprojects {
             .forEach { it.outputs.upToDateWhen { false } }
     }
 
-
     publishing {
         publications {
-            create<MavenPublication>("initiaProto") {
+            create<MavenPublication>("lib") {
+                groupId = project.group.toString()
+                artifactId = project.name
+                version = project.version.toString()
+
                 from(components["java"])
+
+                pom {
+                    name.set(project.name)
+                    description.set("Initia Protobuf Builds")
+                    url.set("https://github.com/initia-labs/initia.proto")
+                    licenses {
+                        license {
+                            name.set("The Apache License, Version 2.0")
+                            url.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
+                        }
+                    }
+                    developers {
+                        developer {
+                            id.set("initia-labs")
+                            name.set("Initia-Labs")
+                        }
+                    }
+                    scm {
+                        connection.set("scm:git:git://github.com/initia-labs/initia.proto.git")
+                        developerConnection.set("scm:git:git://github.com/initia-labs/initia.proto.git")
+                        url.set("https://github.com/initia-labs/initia.proto")
+                    }
+                }
+            }
         }
+
     }
 
-    repositories {
-        maven {
-            name = "initiaLabs"
-            url = uri(layout.buildDirectory.dir("repo"))
-        }
+    signing {
+        sign(publishing.publications["lib"])
     }
-}
-
 }
 
 dependencies {
@@ -67,7 +99,6 @@ dependencies {
 
     api("com.google.protobuf:protobuf-java:$protobufVersion")
     api("com.google.protobuf:protobuf-java-util:$protobufVersion")
-    api("com.google.protobuf:protobuf-javalite:$protobufVersion")
 
     compileOnly("org.apache.tomcat:annotations-api:6.0.53")
 }

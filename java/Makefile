@@ -19,4 +19,4 @@ clean:
 	@rm -rf grpc/src
 	@rm -rf kotlin/src kotlin/grpc
 
-.PHONY: all proto-gen format init build publish
+.PHONY: all proto-gen format init publish
