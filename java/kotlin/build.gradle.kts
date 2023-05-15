@@ -36,7 +36,7 @@ dependencies {
     api(project(":"))
     api("com.google.protobuf:protobuf-kotlin:$protobufVersion")
 
-    compileOnly("org.apache.tomcat:annotations-api:6.0.53")
+    compileOnly("org.apache.tomcat:tomcat-annotations-api:10.1.8")
 }
 
 tasks.create("cleanProto") {

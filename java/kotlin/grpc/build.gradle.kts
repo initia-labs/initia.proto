@@ -41,7 +41,7 @@ dependencies {
     api(project(":grpc-java"))
     api("io.grpc:grpc-kotlin-stub:$grpcKotlinVersion")
 
-    compileOnly("org.apache.tomcat:annotations-api:6.0.53")
+    compileOnly("org.apache.tomcat:tomcat-annotations-api:10.1.8")
 }
 
 tasks.create("cleanProto") {

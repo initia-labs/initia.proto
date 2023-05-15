@@ -100,7 +100,7 @@ dependencies {
     api("com.google.protobuf:protobuf-java:$protobufVersion")
     api("com.google.protobuf:protobuf-java-util:$protobufVersion")
 
-    compileOnly("org.apache.tomcat:annotations-api:6.0.53")
+    compileOnly("org.apache.tomcat:tomcat-annotations-api:10.1.8")
 }
 
 tasks.create("cleanProto") {
