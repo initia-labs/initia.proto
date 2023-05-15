@@ -4,6 +4,11 @@
 
 This section is for maintainers of this repo, not users.
 
+### Prerequisites
+
+* dotnet
+* grpc_csharp_plugin
+
 ### Getting started
 
 ```sh
