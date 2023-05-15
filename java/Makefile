@@ -15,8 +15,5 @@ publish:
 
 clean:
 	./gradlew cleanProto
-	@rm -rf src
-	@rm -rf grpc/src
-	@rm -rf kotlin/src kotlin/grpc
 
 .PHONY: all proto-gen format init publish

@@ -24,7 +24,7 @@ allprojects {
     }
 
     protobuf {
-        generatedFilesBaseDir = "${projectDir.absolutePath}/src"
+        //generatedFilesBaseDir = "${projectDir.absolutePath}/src"
     }
 
     sourceSets {
