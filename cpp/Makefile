@@ -9,8 +9,14 @@ proto-gen:
 	@echo "Generating Protobuf files"
 	./scripts/proto-gen.sh
 
+clean:
+	@echo "clean..."
+	rm -rf src
+
 build:
 	@echo "build..."
+	cd cmake; cmake .; make clean; make all
+
 
 publish:
 	@echo "publish..."
