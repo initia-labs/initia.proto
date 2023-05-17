@@ -1,4 +1,4 @@
-all: init proto-gen
+all: init proto-gen build
 
 init:
 	@echo "Pull External Protofiles"
@@ -15,10 +15,10 @@ clean:
 
 build:
 	@echo "build..."
-	cd cmake; cmake .; make clean; make all
+	cd build; cmake .; make clean; make all
 
 publish:
 	@echo "publish..."
-	cd cmake; make install
+	cd build; make install
 
 .PHONY: all proto-gen format init build publish
