@@ -19,6 +19,6 @@ build:
 
 publish:
 	@echo "publish..."
-	make install
+	cd cmake; make install
 
 .PHONY: all proto-gen format init build publish
