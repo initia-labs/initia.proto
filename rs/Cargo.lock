@@ -333,7 +333,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "initia-rs"
+name = "initia-proto"
 version = "0.1.0"
 dependencies = [
  "prost",

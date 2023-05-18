@@ -1,0 +1,29 @@
+node_modules
+
+.vscode/
+
+/build/
+/confio/
+/cosmos/
+/cosmos_proto/
+/gogoproto/
+/google/
+/ibc/
+/initia/
+/intertx/
+/tendermint/
+
+/src/
+/grpc/src
+/grpc/build
+/grpc/grpc
+/kotlin/src
+/kotlin/build
+/kotlin/grpc/src
+/kotlin/grpc/build
+
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
