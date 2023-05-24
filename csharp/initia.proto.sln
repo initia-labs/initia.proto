@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 25.0.1705.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Initia.Proto", "initia.proto.csproj", "{F3097E99-9786-4421-ACA2-0E0C54DA2EC9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "initia.proto", "initia.proto.csproj", "{F3097E99-9786-4421-ACA2-0E0C54DA2EC9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,5 +21,27 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A9F491FF-FF20-4BF2-A39D-D43A4A30027B}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = PrefixedHierarchical
+		$0.TextStylePolicy = $2
+		$2.inheritsSet = null
+		$2.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $3
+		$3.scope = text/x-csharp
+		$0.TextStylePolicy = $4
+		$4.FileWidth = 80
+		$4.TabsToSpaces = True
+		$4.scope = text/plain
+		$0.TextStylePolicy = $5
+		$5.inheritsSet = null
+		$5.scope = text/x-makefile
+		$0.TextStylePolicy = $6
+		$6.inheritsSet = null
+		$6.scope = application/x-sh
+		version = 0.1.0
+		description = protobuf bindings for initia
 	EndGlobalSection
 EndGlobal

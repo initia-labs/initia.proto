@@ -11,10 +11,16 @@ proto-gen:
 
 build:
 	@echo "build..."
-	@#dotnet pack --include-symbols --include-source --no-build
-	@dotnet pack --no-build
+	@INITIA_DIR=`realpath ../initia/proto` \
+	INITIA_THIRD_PARTY_DIR=`realpath ../initia/third_party/proto` \
+	dotnet pack --configuration Release
 
 publish:
-	dotnet publish
+	@INITIA_DIR=`realpath ../initia/proto` \
+	INITIA_THIRD_PARTY_DIR=`realpath ../initia/third_party/proto` \
+	dotnet publish --configuration Release --no-build 
+	@INITIA_DIR=`realpath ../initia/proto` \
+	INITIA_THIRD_PARTY_DIR=`realpath ../initia/third_party/proto` \
+	dotnet nuget push ./bin/Release/initia.proto.*.nupkg --source https://api.nuget.org/v3/index.json --api-key $(NUGET_API_KEY)
 
 .PHONY: all proto-gen format init build publish

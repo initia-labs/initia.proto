@@ -1,13 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Protobuf_NoWarnMissingExpected>true</Protobuf_NoWarnMissingExpected>
+    <Version>0.1.0-alpha.1</Version>
+    <Description>protobuf bindings for inita</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="./resources/README.md" Pack="true" PackagePath="\" />
     <PackageReference Include="Grpc" Version="2.46.6" />
     <PackageReference Include="Grpc.Core" Version="2.46.6" />
     <PackageReference Include="Grpc.Reflection" Version="2.46.6" />
