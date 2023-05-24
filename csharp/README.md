@@ -26,3 +26,8 @@ make proto-gen
 ```sh
 make build
 ```
+
+### Publishing package (including rebuilding types and building package)
+```sh
+NUGET_API_KEY=... make all
+```

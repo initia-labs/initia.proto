@@ -1,4 +1,4 @@
-all: init proto-gen build
+all: clean init proto-gen build publish
 
 init:
 	@echo "Pull External Protofiles"
@@ -9,13 +9,16 @@ proto-gen:
 	@echo "Generating Protobuf files"
 	./scripts/proto-gen.sh
 
-build:
+clean:
+	@rm -rf ./bin ./obj
+
+build: 
 	@echo "build..."
 	@INITIA_DIR=`realpath ../initia/proto` \
 	INITIA_THIRD_PARTY_DIR=`realpath ../initia/third_party/proto` \
 	dotnet pack --configuration Release
 
-publish:
+publish: 
 	@INITIA_DIR=`realpath ../initia/proto` \
 	INITIA_THIRD_PARTY_DIR=`realpath ../initia/third_party/proto` \
 	dotnet publish --configuration Release --no-build 
