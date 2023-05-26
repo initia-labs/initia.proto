@@ -24,10 +24,11 @@ make proto-gen
 ### Building package
 
 ```sh
+# before build, update version first!
 make build
 ```
 
 ### Publishing package (including rebuilding types and building package)
 ```sh
-NUGET_API_KEY=... make all
+NUGET_API_KEY=... RELEASE_VERSION=... make all
 ```

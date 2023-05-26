@@ -41,7 +41,7 @@ Global
 		$0.TextStylePolicy = $6
 		$6.inheritsSet = null
 		$6.scope = application/x-sh
-		version = 0.1.0
+		version = 1.0.1-alpha.1
 		description = protobuf bindings for initia
 	EndGlobalSection
 EndGlobal
