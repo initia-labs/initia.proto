@@ -5,3 +5,7 @@ proto generator for multiple languages
 - js
 - python
 - rust
+- csharp
+- java
+- swift
+- cpp
