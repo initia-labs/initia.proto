@@ -37,8 +37,8 @@ allprojects {
     }
 
     java {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
 
         withSourcesJar()
         withJavadocJar()
@@ -100,7 +100,7 @@ dependencies {
     api("com.google.protobuf:protobuf-java:$protobufVersion")
     api("com.google.protobuf:protobuf-java-util:$protobufVersion")
 
-    compileOnly("org.apache.tomcat:tomcat-annotations-api:10.1.8")
+    compileOnly("javax.annotation:javax.annotation-api:1.3.2")
 }
 
 tasks.create("cleanProto") {

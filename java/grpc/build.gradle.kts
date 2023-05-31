@@ -36,7 +36,7 @@ dependencies {
     api("io.grpc:grpc-protobuf:$grpcVersion")
     api("io.grpc:grpc-stub:$grpcVersion")
 
-    compileOnly("org.apache.tomcat:tomcat-annotations-api:10.1.8")
+    compileOnly("javax.annotation:javax.annotation-api:1.3.2")
 }
 
 tasks.create("cleanProto") {

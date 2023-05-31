@@ -5,7 +5,7 @@ plugins {
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
+    kotlinOptions.jvmTarget = JavaVersion.VERSION_11.toString()
 }
 
 protobuf {
@@ -41,7 +41,7 @@ dependencies {
     api(project(":grpc-java"))
     api("io.grpc:grpc-kotlin-stub:$grpcKotlinVersion")
 
-    compileOnly("org.apache.tomcat:tomcat-annotations-api:10.1.8")
+    compileOnly("javax.annotation:javax.annotation-api:1.3.2")
 }
 
 tasks.create("cleanProto") {
