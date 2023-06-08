@@ -44,7 +44,7 @@ find ./src -name '*.cs' | xargs sed -i '' 's/cosmos.base/cosmos.ibase/g'
 find ./src -name '*.cs' | xargs sed -i '' 's/cosmos.params/cosmos.iparams/g'
 
 # remove unnecessary files
-rm -rf ./src/gogoproto ./src/google
+rm -rf ./src/gogoproto
 
 # clean up
 rm -rf ./proto ./third_party
