@@ -1,4 +1,4 @@
-all: clean proto-gen init build
+all: clean init proto-gen build
 
 init:
 	@echo "Pull External Protofiles"
@@ -12,7 +12,6 @@ clean:
 proto-gen:
 	@echo "build..."
 	./scripts/proto-gen.sh
-
 
 
 build:
