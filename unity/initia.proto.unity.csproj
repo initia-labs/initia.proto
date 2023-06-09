@@ -23,8 +23,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="protobuf-net" Version="3.2.26" />
-    <PackageReference Include="protobuf-net.Reflection" Version="3.2.12" />
+    <PackageReference Include="protobuf-net" Version="2.4.8" />
+    <PackageReference Include="protobuf-net.Reflection" Version="2.3.17" />
     <PackageReference Include="System.Collections" Version="4.3.0" />
     <PackageReference Include="System.Net.Http" Version="4.3.4" />
   </ItemGroup>

@@ -33,7 +33,7 @@ for fname in `find ./third_party -path -prune -o -name '*.proto'`; do
 done
 
 protogen \
-  +names=auto \
+  +listset=yes \
   --csharp_out="${OUT_DIR}" \
   --proto_path=third_party \
   --proto_path=proto \
