@@ -12,9 +12,7 @@ find_package(Protobuf REQUIRED)
 file(GLOB_RECURSE SOURCES "../src/**.*.cc")
 file(GLOB_RECURSE HEADERS "../src/**.*.h")
 # Include header files
-#include_directories("../src" "/opt/homebrew/include")
 include_directories("../src" ${Protobuf_INCLUDE_DIRS})
-#link_directories("/opt/homebrew/Cellar/protobuf/21.12/lib" "/opt/homebrew/lib" "/usr/local/lib" "/usr/lib")
 
 # Create shared library
 add_library(initia_proto SHARED ${SOURCES})
@@ -27,12 +25,7 @@ install(TARGETS ${PROJECT_NAME} DESTINATION lib/${PROJECT_NAME})
 
 # Install library headers
 file(GLOB_RECURSE HEADERS "../src/**.*.h")
-# message(STATUS "HEADERS: ${HEADERS}")
-# install(DIRECTORY "${CMAKE_SOURCE_DIR}/" # source directory
-#         DESTINATION "include" # target directory
-#         FILES_MATCHING # install only matched files
-#         PATTERN "*.h" # select header files
-# )
+
 macro(install_with_directory)
     set(optionsArgs "")
     set(oneValueArgs "DESTINATION")
