@@ -28,3 +28,6 @@ protoc \
   --proto_path="$INITIA_DIR" \
   --proto_path="$INITIA_THIRD_PARTY_DIR" \
   $(find ${INITIA_DIR} ${INITIA_THIRD_PARTY_DIR} -path -prune -o -name '*.proto' -print0 | xargs -0)
+
+echo "Removing Google/Protobuf: conflicts with Grpc.Protobuf"
+rm -rf "${OUT_DIR}/Google/Protobuf"

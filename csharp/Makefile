@@ -34,6 +34,6 @@ push:
 	@echo "pushing..."
 	@INITIA_DIR=`realpath ../initia/proto` \
 	INITIA_THIRD_PARTY_DIR=`realpath ../initia/third_party/proto` \
-	dotnet nuget push ./bin/Release/initia.proto.${RELEASE_VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key $(NUGET_API_KEY)
+	dotnet nuget push ./bin/Release/initia-proto.${RELEASE_VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key $(NUGET_API_KEY)
 
 .PHONY: all proto-gen format init build publish
