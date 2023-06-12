@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>net6.0;net461;netstandard2.0</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Version>1.0.1-alpha.1</Version>
+    <Version>1.0.0-alpha.1</Version>
     <Description>protobuf bindings for inita - unity compatible</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <ReleaseVersion>1.0.0-alpha.1</ReleaseVersion>
