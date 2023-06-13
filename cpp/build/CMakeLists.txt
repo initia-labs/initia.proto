@@ -4,15 +4,18 @@ project(initia_proto VERSION 0.1.0 DESCRIPTION "proto for initia" LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(ABSL_PROPAGATE_CXX_STD ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 find_package(Protobuf REQUIRED)
+find_package(absl REQUIRED)
 
 # Find source files
 file(GLOB_RECURSE SOURCES "../src/**.*.cc")
 file(GLOB_RECURSE HEADERS "../src/**.*.h")
 # Include header files
 include_directories("../src" ${Protobuf_INCLUDE_DIRS})
+add_library(absl_LIBRARIES ${SOURCES})
 
 # Create shared library
 add_library(initia_proto SHARED ${SOURCES})
