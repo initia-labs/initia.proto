@@ -2,8 +2,7 @@ all: init proto-gen format
 
 init:
 	@echo "Pull External Protofiles"
-	git submodule init
-	git submodule update --remote
+	@../scripts/update-submodule.sh `realpath ..`
 
 	@echo "Install dependencies"
 	npm i
@@ -11,11 +10,11 @@ init:
 format:
 	npm run format
 
-proto-gen: 
+proto-gen:
 	@echo "Generating Protobuf files"
-	./scripts/proto-gen.sh
+	@./scripts/proto-gen.sh
 
-build: 
+build:
 	npm run build
 
 publish:
