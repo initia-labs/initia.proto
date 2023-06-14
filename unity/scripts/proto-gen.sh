@@ -51,16 +51,6 @@ for fname in `find ./proto/third_party -path -prune -o -name '*.proto'`; do
   PROTOS+="${fname#./proto/third_party/} " # trailing space is matter
 done
 
-echo protogen \
-  +listset=yes \
-  --csharp_out="${OUT_DIR}" \
-  --proto_path=proto/initia \
-  --proto_path=proto/cosmos \
-  --proto_path=proto/cosmos_proto \
-  --proto_path=proto/ibc \
-  --proto_path=proto/ics \
-  --proto_path=proto/third_party \
-  $PROTOS
 protogen \
   +listset=yes \
   --csharp_out="${OUT_DIR}" \
