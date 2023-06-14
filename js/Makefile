@@ -12,6 +12,7 @@ format:
 
 proto-gen:
 	@echo "Generating Protobuf files"
+	@rm -rf ./src
 	@./scripts/proto-gen.sh
 
 build:
