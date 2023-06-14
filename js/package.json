@@ -11,16 +11,7 @@
     "access": "public"
   },
   "files": [
-    "confio/",
-    "cosmos/",
-    "cosmos_proto/",
-    "gogoproto/",
-    "google/",
-    "ibc/",
-    "initia/",
-    "intertx/",
-    "tendermint/",
-    "proofs.*",
+    "./build",
     "*.md"
   ],
   "scripts": {
