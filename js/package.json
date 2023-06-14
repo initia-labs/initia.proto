@@ -11,12 +11,19 @@
     "access": "public"
   },
   "files": [
-    "./build",
+    "amino/",
+    "cosmos/",
+    "cosmos_proto/",
+    "gogoproto/",
+    "google/",
+    "ibc/",
+    "initia/",
+    "tendermint/",
     "*.md"
   ],
   "scripts": {
     "format": "prettier --write --loglevel warn \"./src/**/*.ts\"",
-    "build": "rm -rf ./build && mkdir ./build && tsc --module commonjs --outDir ./build",
+    "build": "rm -rf ./build && tsc --module commonjs && ./scripts/prepare.sh",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
