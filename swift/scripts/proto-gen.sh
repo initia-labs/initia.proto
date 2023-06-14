@@ -23,6 +23,7 @@ ICS_DIR="../ics23/proto"
 THIRDPARTY_DIR="../third_party"
 
 protoc \
+  --plugin=`which protoc-gen-swift` \
   --swift_out="${OUT_DIR}" \
   --proto_path="$INITIA_DIR" \
   --proto_path="$COSMOS_DIR" \
