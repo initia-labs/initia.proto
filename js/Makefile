@@ -2,6 +2,7 @@ all: init proto-gen format
 
 init:
 	@echo "Pull External Protofiles"
+	@../scripts/prepare.sh js
 	@../scripts/update-submodule.sh `realpath ..`
 
 	@echo "Install dependencies"

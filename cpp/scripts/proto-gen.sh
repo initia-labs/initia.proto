@@ -4,12 +4,6 @@ command -v shellcheck >/dev/null && shellcheck "$0"
 
 OUT_DIR="./src"
 
-which cmake > /dev/null
-if [ $? -ne 0 ]; then
-  echo "cmake not found. Please install it first." 2>&1
-  exit 1
-fi
-
 #which grpc_cpp_plugin > /dev/null
 #if [ $? -ne 0 ]; then
 #  echo "grpc_cpp_plugin not found. Please install it first." 2>&1

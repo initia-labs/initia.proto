@@ -3,7 +3,7 @@ set -o errexit -o nounset -o pipefail
 command -v shellcheck >/dev/null && shellcheck "$0"
 
 git submodule init
-git submodule update --remote $1/initia
+git submodule update --remote
 
 # clone dependency proto files
 COSMOS_URL=github.com/cosmos/cosmos-sdk

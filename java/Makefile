@@ -2,6 +2,7 @@ all: init clean proto-gen
 
 init:
 	@echo "Pull External Protofiles"
+	@../scripts/prepare.sh java
 	@../scripts/update-submodule.sh `realpath ..`
 
 proto-gen:

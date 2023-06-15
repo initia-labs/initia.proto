@@ -2,6 +2,7 @@ all: init clean proto-gen build
 
 init:
 	@echo "Pull External Protofiles"
+	@../scripts/prepare.sh cpp
 	@../scripts/update-submodule.sh `realpath ..`
 
 proto-gen:

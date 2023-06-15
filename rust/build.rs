@@ -27,7 +27,13 @@ const INITIA_REV: &str = "main";
 /// The directory generated cosmos-sdk proto files go into in this repo
 const OUT_DIR: &str = "./proto";
 /// Directory where the cosmos-sdk submodule is located
-const INITIA_DIR: &str = "../initia";
+const INITIA_DIR: &str = "../initia/proto";
+const COSMOS_DIR: &str = "../cosmos-sdk/proto";
+const COSMOS_PROTO_DIR: &str = "../cmosmos-proto/proto";
+const IBC_DIR: &str = "../ibc-go/proto";
+const ICS_DIR: &str = "../ics23/proto";
+const THIRDPARTY_DIR: &str = "../thirdparty";
+
 /// A temporary directory for proto building
 const TMP_BUILD_DIR: &str = "/tmp/tmp-protobuf/";
 
@@ -68,7 +74,7 @@ fn main() {
 
     set_initia_version(&temp_initia_dir);
     compile_initia_protos_and_services(&temp_initia_dir);
-    compile_thirdparty_protos_and_services(&temp_initia_dir);
+    compile_dependent_protos_and_services(&temp_initia_dir);
 
     copy_generated_files(&temp_initia_dir, &output_dir);
 
@@ -187,7 +193,7 @@ fn compile_initia_protos_and_services(out_dir: &Path) {
     info!("=> Done!");
 }
 
-fn compile_thirdparty_protos_and_services(out_dir: &Path) {
+fn compile_dependent_protos_and_services(out_dir: &Path) {
     //let root = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
     let sdk_dir = PathBuf::from(INITIA_DIR);
 
@@ -332,8 +338,6 @@ fn copy_and_patch(src: impl AsRef<Path>, dest: impl AsRef<Path>) -> io::Result<(
         ),
     ];
     
-
-
     // Skip proto files belonging to `EXCLUDED_PROTO_PACKAGES`
     for package in EXCLUDED_PROTO_PACKAGES {
         if let Some(filename) = src.as_ref().file_name().and_then(OsStr::to_str) {

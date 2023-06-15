@@ -1,15 +1,8 @@
 #!/bin/bash
-set -o nounset -o pipefail
+set -o errexit -o nounset -o pipefail
 command -v shellcheck >/dev/null && shellcheck "$0"
 
-CSHARP_PLUGIN=`which grpc_csharp_plugin`
-if [ -z "$CSHARP_PLUGIN" ]; then
-  echo "grpc_csharp_plugin not found. Please install grpc_csharp_plugin and add it to your PATH."
-  exit 1
-fi
 OUT_DIR="./src"
-
-set -o errexit -o nounset -o pipefail
 
 mkdir -p "$OUT_DIR"
 

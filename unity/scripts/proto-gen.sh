@@ -1,15 +1,8 @@
 #!/bin/bash
-set -o nounset -o pipefail
+set -o errexit -o nounset -o pipefail
 command -v shellcheck >/dev/null && shellcheck "$0"
 
-PROTOGEN=`which protogen`
-if [ -z "$PROTOGEN" ]; then
-  echo "protogen for protobuf-net not found. Please install protogen."
-  exit 1
-fi
 OUT_DIR=./src
-
-set -o errexit -o nounset -o pipefail
 
 mkdir -p "$OUT_DIR"
 

@@ -2,6 +2,7 @@ all: init proto-gen build
 
 init:
 	@echo "Pull External Protofiles"
+	@../scripts/prepare.sh python
 	@../scripts/update-submodule.sh `realpath ..`
 
 # do not format. we uses just auto-generated ones.
