@@ -2,11 +2,7 @@ all: init proto-gen build
 
 init:
 	@echo "Pull External Protofiles"
-	git submodule init
-	git submodule update --remote
-
-#@echo "Install dependencies"
-#npm i
+	@../scripts/update-submodule.sh `realpath ..`
 
 # do not format. we uses just auto-generated ones.
 #format: 
@@ -15,6 +11,9 @@ init:
 proto-gen: 
 	@echo "Generating Protobuf files"
 	./scripts/proto-gen.sh
+
+clean: 
+	rm -rf initia-proto
 
 build: 
 	poetry build
