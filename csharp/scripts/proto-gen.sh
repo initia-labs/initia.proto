@@ -12,15 +12,25 @@ echo "Processing initia proto files ..."
 #INITIA_THIRD_PARTY_DIR=`realpath ../initia/third_party/proto` \
 #  dotnet build
 
-INITIA_DIR=`realpath ../initia/proto`
-INITIA_THIRD_PARTY_DIR=`realpath ../initia/third_party/proto`
+INITIA_DIR="../initia/proto"
+COSMOS_DIR="../cosmos-sdk/proto"
+COSMOS_PROTO_DIR="../cosmos-proto/proto"
+IBC_DIR="../ibc-go/proto"
+ICS_DIR="../ics23/proto"
+THIRDPARTY_DIR="../third_party"
+
+CSHARP_PLUGIN=`which grpc_csharp_plugin`
 protoc \
   --plugin=protoc-gen-grpc=${CSHARP_PLUGIN} \
   --csharp_out="${OUT_DIR}" \
   --csharp_opt=file_extension=.g.cs,base_namespace=,serializable \
   --proto_path="$INITIA_DIR" \
-  --proto_path="$INITIA_THIRD_PARTY_DIR" \
-  $(find ${INITIA_DIR} ${INITIA_THIRD_PARTY_DIR} -path -prune -o -name '*.proto' -print0 | xargs -0)
+  --proto_path="$COSMOS_DIR" \
+  --proto_path="$COSMOS_PROTO_DIR" \
+  --proto_path="$IBC_DIR" \
+  --proto_path="$ICS_DIR" \
+  --proto_path="$THIRDPARTY_DIR" \
+  $(find ${INITIA_DIR} ${COSMOS_DIR} ${COSMOS_PROTO_DIR} ${IBC_DIR} ${ICS_DIR} ${THIRDPARTY_DIR} -path -prune -o -name '*.proto' -print0 | xargs -0)
 
 echo "Removing Google/Protobuf: conflicts with Grpc.Protobuf"
 rm -rf "${OUT_DIR}/Google/Protobuf"
