@@ -1,24 +1,20 @@
-all: init proto-gen
+all: clean init proto-gen
 
 init:
 	@echo "Pull External Protofiles"
 	@../scripts/prepare.sh rust
 	@../scripts/update-submodule.sh `realpath ..`
+	cargo install protoc-gen-prost protoc-gen-tonic
 
 clean:
-	-rm -rf ./proto
-
-	@echo "Install proto compilers..."
-	cargo install protoc-gen-prost protoc-gen-tonic
+	@echo "Clean up previously built protos..."
+	@-rm -rf ./proto ./initia-proto/src/proto
 
 
 proto-gen: 
 	@echo "Generating Protobuf files"
-	@export OUT_DIR="./src/proto"
-	@export INITIA_DIR="../initia/proto"
-	@export INITIA_THIRD_PARTY_DIR="../initia/third_party/proto"
-	cargo build
-	mv ./proto ./src/proto
+	cargo build -p initia-proto-builder
+	cargo build -p initia-proto
 
 build: init proto-gen
 

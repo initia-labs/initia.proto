@@ -25,14 +25,14 @@ const INITIA_REV: &str = "main";
 // working directory.
 
 /// The directory generated cosmos-sdk proto files go into in this repo
-const OUT_DIR: &str = "./proto";
+const OUT_DIR: &str = "../initia-proto/src/proto";
 /// Directory where the cosmos-sdk submodule is located
-const INITIA_DIR: &str = "../initia/proto";
-const COSMOS_DIR: &str = "../cosmos-sdk/proto";
-const COSMOS_PROTO_DIR: &str = "../cmosmos-proto/proto";
-const IBC_DIR: &str = "../ibc-go/proto";
-const ICS_DIR: &str = "../ics23/proto";
-const THIRDPARTY_DIR: &str = "../thirdparty";
+const INITIA_DIR: &str = "../../initia/proto";
+const COSMOS_DIR: &str = "../../cosmos-sdk/proto";
+const COSMOS_PROTO_DIR: &str = "../../cosmos-proto/proto";
+const IBC_DIR: &str = "../../ibc-go/proto";
+const ICS_DIR: &str = "../../ics23/proto";
+const THIRDPARTY_DIR: &str = "../../third_party";
 
 /// A temporary directory for proto building
 const TMP_BUILD_DIR: &str = "/tmp/tmp-protobuf/";
@@ -153,18 +153,18 @@ fn compile_initia_protos_and_services(out_dir: &Path) {
         out_dir.display()
     );
 
-    //let root = env!("CARGO_MANIFEST_DIR");
-    let sdk_dir = Path::new(INITIA_DIR);
-
     let proto_includes_paths = [
-        //format!("{}/../proto", root),
-        format!("{}/proto", sdk_dir.display()),
-        format!("{}/third_party/proto", sdk_dir.display()),
+        INITIA_DIR.to_owned(),
+        COSMOS_DIR.to_owned(),
+        COSMOS_PROTO_DIR.to_owned(),
+        IBC_DIR.to_owned(),
+        ICS_DIR.to_owned(),
+        THIRDPARTY_DIR.to_owned(),
     ];
 
     // Paths
     let proto_paths = [
-        format!("{}/proto", sdk_dir.display()),
+        INITIA_DIR.to_owned(),
         /* 
         format!("{}/proto/initia/distribution", sdk_dir.display()),
         format!("{}/proto/initia/mint", sdk_dir.display()),
@@ -194,23 +194,25 @@ fn compile_initia_protos_and_services(out_dir: &Path) {
 }
 
 fn compile_dependent_protos_and_services(out_dir: &Path) {
-    //let root = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
-    let sdk_dir = PathBuf::from(INITIA_DIR);
-
     let proto_includes_paths = [
-        //root.join("../proto"),
-        sdk_dir.join("proto"),
-        sdk_dir.join("third_party/proto"),
+        INITIA_DIR.to_owned(),
+        COSMOS_DIR.to_owned(),
+        COSMOS_PROTO_DIR.to_owned(),
+        IBC_DIR.to_owned(),
+        ICS_DIR.to_owned(),
+        THIRDPARTY_DIR.to_owned(),
     ];
-
-    let thirdparty_dir = sdk_dir.join("third_party");
 
     // List available paths for dependencies
     let includes: Vec<PathBuf> = proto_includes_paths.iter().map(PathBuf::from).collect();
 
         // Paths
     let proto_paths = [
-        format!("{}/proto", thirdparty_dir.display()),
+        COSMOS_DIR.to_owned(),
+        COSMOS_PROTO_DIR.to_owned(),
+        IBC_DIR.to_owned(),
+        ICS_DIR.to_owned(),
+        THIRDPARTY_DIR.to_owned(),
         /* 
         format!("{}/proto/confio/auth", thirdparty_dir.display()),
         format!("{}/proto/cosmos/auth", thirdparty_dir.display()),
@@ -390,5 +392,9 @@ fn apply_patches(output_dir: &Path) {
     fs::rename(
         &output_dir.join("initia.r#move.v1.rs"),
         &output_dir.join("initia.move.v1.rs"),
+    ).unwrap();
+    fs::rename(
+        &output_dir.join("initia.r#move.module.v1.rs"),
+        &output_dir.join("initia.move.module.v1.rs"),
     ).unwrap();
 }

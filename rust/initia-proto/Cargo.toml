@@ -1,0 +1,34 @@
+[package]
+name = "initia-proto"
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+authors = ["the-black-wizards <emperor@initia.co>"]
+repository = "https://github.com/initia-labs/initia.proto/tree/main/rs"
+keywords = ["initia"]
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+prost = "0.11"
+prost-types = "0.11"
+tendermint-proto = "0.28"
+# Optional dependencies
+tonic = { version = "0.8.3", optional = true, default-features = false, features = ["codegen", "prost"] }
+
+[features]
+default = ["grpc-transport"]
+grpc = ["tonic"]
+grpc-transport = ["grpc", "tonic/transport"]
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
+
+[build-dependencies]
+prost = "0.11"
+prost-types = "0.11"
+regex = "1.7.1"
+tendermint-proto = "0.28"
+tonic = { version = "0.8.3", optional = true, default-features = false, features = ["codegen", "prost"] }
+tonic-build = "0.8.3"
+walkdir = "2.3.2"
