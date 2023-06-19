@@ -2,8 +2,8 @@ all: init clean proto-gen build
 
 init:
 	@echo "Pull External Protofiles"
-	git submodule init
-	git submodule update --remote
+	@../scripts/prepare.sh cpp
+	@../scripts/update-submodule.sh `realpath ..`
 
 proto-gen:
 	@echo "Generating Protobuf files"

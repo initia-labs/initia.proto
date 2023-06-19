@@ -110,4 +110,4 @@ dist
 # MacOS
 .DS_Store
 
-rs/target
+rust/target

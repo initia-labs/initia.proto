@@ -1,3 +1,15 @@
 [submodule "initia"]
 	path = initia
 	url = git@github.com:initia-labs/initia.git
+[submodule "cosmos-sdk"]
+	path = cosmos-sdk
+	url = git@github.com:cosmos/cosmos-sdk.git
+[submodule "ibc-go"]
+	path = ibc-go
+	url = git@github.com:cosmos/ibc-go.git
+[submodule "cosmos-proto"]
+	path = cosmos-proto
+	url = git@github.com:cosmos/cosmos-proto.git
+[submodule "ics23"]
+	path = ics23
+	url = git@github.com:confio/ics23

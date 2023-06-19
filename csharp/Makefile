@@ -2,8 +2,8 @@ all: clean init proto-gen build
 
 init:
 	@echo "Pull External Protofiles"
-	git submodule init
-	git submodule update --remote
+	@../scripts/prepare.sh csharp
+	@../scripts/update-submodule.sh `realpath ..`
 
 proto-gen:
 	@echo "Generating Protobuf files"
@@ -15,7 +15,11 @@ clean:
 build:
 	@echo "build..."
 	@INITIA_DIR=`realpath ../initia/proto` \
-	INITIA_THIRD_PARTY_DIR=`realpath ../initia/third_party/proto` \
+	COSMOS_DIR=`realpath ../cosmos-sdk/proto` \
+	COSMOS_PROTO_DIR=`realpath ../initia/cosmos-proto/proto` \
+	IBC_DIR=`realpath ../initia/ibc-go/proto` \
+	ICS_DIR=`realpath ../initia/ics23/proto` \
+	THIRD_PARTY_DIR=`realpath ../initia/third_party` \
 	dotnet pack --include-source --include-symbols --configuration Release
 
 publish:

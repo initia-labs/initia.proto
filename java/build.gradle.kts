@@ -30,8 +30,12 @@ allprojects {
     sourceSets {
         main {
             proto {
-                srcDir("${rootProject.rootDir.parent}/initia/third_party/proto")
                 srcDir("${rootProject.rootDir.parent}/initia/proto")
+                srcDir("${rootProject.rootDir.parent}/cosmos-sdk/proto")
+                srcDir("${rootProject.rootDir.parent}/cosmos-proto/proto")
+                srcDir("${rootProject.rootDir.parent}/ibc-go/proto")
+                srcDir("${rootProject.rootDir.parent}/ics23/proto")
+                srcDir("${rootProject.rootDir.parent}/third_party")
             }
         }
     }

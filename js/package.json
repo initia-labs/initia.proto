@@ -11,16 +11,14 @@
     "access": "public"
   },
   "files": [
-    "confio/",
+    "amino/",
     "cosmos/",
     "cosmos_proto/",
     "gogoproto/",
     "google/",
     "ibc/",
     "initia/",
-    "intertx/",
     "tendermint/",
-    "proofs.*",
     "*.md"
   ],
   "scripts": {
