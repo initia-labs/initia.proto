@@ -1,0 +1,17 @@
+node_modules
+
+.vscode/
+
+/build/
+!/build/CMakeLists.txt
+/confio/
+/cosmos/
+/cosmos_proto/
+/gogoproto/
+/google/
+/ibc/
+/initia/
+/intertx/
+/tendermint/
+
+/src/

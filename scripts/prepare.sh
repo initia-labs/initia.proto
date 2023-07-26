@@ -19,6 +19,7 @@ case $1 in
 	"csharp") PREREQUISITES="dotnet grpc_csharp_plugin";; 
 	"unity") PREREQUISITES="protogen";; 
 	"cpp") PREREQUISITES="protoc cmake";;
+	"c") PREREQUISITES="protoc-c";;
 esac
 
 for PREREQUISITE in $PREREQUISITES; do
