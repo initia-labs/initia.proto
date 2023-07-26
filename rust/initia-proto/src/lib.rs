@@ -301,7 +301,7 @@ pub mod cosmos {
                 include!("proto/cosmos.nft.module.v1.rs");
             }
         }
-        pub mod v1beta{
+        pub mod v1beta1 {
             include!("proto/cosmos.nft.v1beta1.rs");
         }
     }
