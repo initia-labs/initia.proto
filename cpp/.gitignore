@@ -13,5 +13,6 @@ node_modules
 /initia/
 /intertx/
 /tendermint/
-
+/ics23/
+/pob/
 /src/

@@ -35,6 +35,7 @@ allprojects {
                 srcDir("${rootProject.rootDir.parent}/cosmos-proto/proto")
                 srcDir("${rootProject.rootDir.parent}/ibc-go/proto")
                 srcDir("${rootProject.rootDir.parent}/ics23/proto")
+                srcDir("${rootProject.rootDir.parent}/pob/proto")
                 srcDir("${rootProject.rootDir.parent}/third_party")
             }
         }

@@ -32,6 +32,7 @@ const COSMOS_DIR: &str = "../../cosmos-sdk/proto";
 const COSMOS_PROTO_DIR: &str = "../../cosmos-proto/proto";
 const IBC_DIR: &str = "../../ibc-go/proto";
 const ICS_DIR: &str = "../../ics23/proto";
+const POB_DIR: &str = "../../pob/proto";
 const THIRDPARTY_DIR: &str = "../../third_party";
 
 /// A temporary directory for proto building
@@ -159,6 +160,7 @@ fn compile_initia_protos_and_services(out_dir: &Path) {
         COSMOS_PROTO_DIR.to_owned(),
         IBC_DIR.to_owned(),
         ICS_DIR.to_owned(),
+        POB_DIR.to_owned(),
         THIRDPARTY_DIR.to_owned(),
     ];
 
@@ -200,6 +202,7 @@ fn compile_dependent_protos_and_services(out_dir: &Path) {
         COSMOS_PROTO_DIR.to_owned(),
         IBC_DIR.to_owned(),
         ICS_DIR.to_owned(),
+        POB_DIR.to_owned(),
         THIRDPARTY_DIR.to_owned(),
     ];
 
@@ -212,6 +215,7 @@ fn compile_dependent_protos_and_services(out_dir: &Path) {
         COSMOS_PROTO_DIR.to_owned(),
         IBC_DIR.to_owned(),
         ICS_DIR.to_owned(),
+        POB_DIR.to_owned(),
         THIRDPARTY_DIR.to_owned(),
         /* 
         format!("{}/proto/confio/auth", thirdparty_dir.display()),
