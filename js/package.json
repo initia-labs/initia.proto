@@ -19,6 +19,7 @@
     "ibc/",
     "initia/",
     "tendermint/",
+    "pob/",
     "*.md"
   ],
   "scripts": {

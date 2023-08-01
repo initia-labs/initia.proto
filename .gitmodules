@@ -13,3 +13,6 @@
 [submodule "ics23"]
 	path = ics23
 	url = git@github.com:confio/ics23
+[submodule "pob"]
+	path = pob
+	url = git@github.com:skip-mev/pob.git
