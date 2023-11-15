@@ -19,6 +19,6 @@
 [submodule "miniwasm"]
 	path = miniwasm
 	url = git@github.com:initia-labs/miniwasm.git
-[submodule "wasm"]
-	path = wasm
+[submodule "wasmd"]
+	path = wasmd
 	url = git@github.com:CosmWasm/wasmd.git
