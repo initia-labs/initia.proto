@@ -16,3 +16,9 @@
 [submodule "pob"]
 	path = pob
 	url = git@github.com:skip-mev/pob.git
+[submodule "miniwasm"]
+	path = miniwasm
+	url = git@github.com:initia-labs/miniwasm.git
+[submodule "wasm"]
+	path = wasm
+	url = git@github.com:CosmWasm/wasmd.git
