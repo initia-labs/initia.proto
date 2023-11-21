@@ -22,3 +22,6 @@
 [submodule "wasmd"]
 	path = wasmd
 	url = git@github.com:CosmWasm/wasmd.git
+[submodule "block-sdk"]
+	path = block-sdk
+	url = git@github.com:skip-mev/block-sdk.git

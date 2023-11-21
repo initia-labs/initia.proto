@@ -16,3 +16,4 @@ node_modules
 /src/
 /pob/
 /cosmwasm/
+/sdk/

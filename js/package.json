@@ -1,6 +1,6 @@
 {
   "name": "@initia/initia.proto",
-  "version": "0.1.13",
+  "version": "0.1.15",
   "description": "JS and TS types relating to Protocol Buffers used by Initia project",
   "license": "Apache-2.0",
   "repository": {
@@ -21,6 +21,7 @@
     "tendermint/",
     "pob/",
     "cosmwasm/",
+    "sdk/",
     "*.md"
   ],
   "scripts": {
