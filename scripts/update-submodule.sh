@@ -25,8 +25,7 @@ IBC_VERSION=$(awk -f $AWK_SCRIPT -v expr="$IBC_URL/$IBC_V" $GOMOD)
 ICS_VERSION=$(awk -f $AWK_SCRIPT -v expr="$ICS_URL" $GOMOD)
 POB_VERSION=$(awk -f $AWK_SCRIPT -v expr="$POB_URL" $GOMOD)
 WASMD_VERSION=$(awk -f $AWK_SCRIPT -v expr="$WASMD_URL" $MINIGOMOD)
-# BLOCK_SDK_VERSION=$(awk -f $AWK_SCRIPT -v expr="$BLOCK_SDK_URL" $GOMOD) 
-BLOCK_SDK_VERSION="v1.1.0" # temporarily hard-coded; replace with above
+BLOCK_SDK_VERSION=$(awk -f $AWK_SCRIPT -v expr="$BLOCK_SDK_URL" $GOMOD) 
 
 # if ICS_VERSION is v0.9.0, forced to set v0.10.0
 if [[ "$ICS_VERSION" == "v0.9.0" ]]; then
