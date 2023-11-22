@@ -14,5 +14,5 @@ node_modules
 /tendermint/
 /amino/
 /src/
-/pob/
 /cosmwasm/
+/sdk/
