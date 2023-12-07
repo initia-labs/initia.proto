@@ -21,6 +21,7 @@ case $1 in
 	"cpp") PREREQUISITES="protoc cmake";;
 	"c") PREREQUISITES="protoc-c";;
 esac
+PREREQUISITES="$PREREQUISITES go"
 
 for PREREQUISITE in $PREREQUISITES; do
 	if ! command -v $PREREQUISITE &> /dev/null
