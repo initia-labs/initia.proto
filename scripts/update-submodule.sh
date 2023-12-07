@@ -2,13 +2,24 @@
 set -o errexit -o nounset -o pipefail
 command -v shellcheck >/dev/null && shellcheck "$0"
 
+# regex pattern to check if the version is including commit hash or not
+regex_pattern="v[0-9]+.[0-9]+.[0-9]+-[0-9.]+-[a-fA-F0-9]+"
+
 function getver {
 	pushd . >/dev/null
 	cd $2
-	#val=$(go list -f "{{.Replace.Version}}" -m $1 2>/dev/null)
-	#if [ $? -ne 0 ]; then
+
+	# try to get replace version first, if not, get version
+	val=$(go list -f "{{.Replace.Version}}" -m $1 2>/dev/null)
+	if [ $? -ne 0 ]; then
 		val=$(go list -f "{{.Version}}" -m $1 2>/dev/null)
-	#fi
+	fi
+
+	# if val includes a commit, get the commit hash from val
+	if [[ $val =~ $regex_pattern ]]; then
+		val=$(echo $val | cut -d'-' -f3)
+	fi
+
 	popd >/dev/null
 	echo $val 
 }
