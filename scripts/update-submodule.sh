@@ -2,6 +2,29 @@
 set -o errexit -o nounset -o pipefail
 command -v shellcheck >/dev/null && shellcheck "$0"
 
+# regex pattern to check if the version is including commit hash or not
+regex_pattern="v[0-9]+.[0-9]+.[0-9]+-[0-9.]+-[a-fA-F0-9]+"
+
+function getver {
+	pushd . >/dev/null
+	cd $2
+
+	# try to get replace version first, if not, get version
+	val=$(go list -f "{{.Replace.Version}}" -m $1 2>/dev/null)
+	if [ $? -ne 0 ]; then
+		val=$(go list -f "{{.Version}}" -m $1 2>/dev/null)
+	fi
+
+	# if val includes a commit, get the commit hash from val
+	if [[ $val =~ $regex_pattern ]]; then
+		val=$(echo $val | cut -d'-' -f3)
+	fi
+
+	popd >/dev/null
+	echo $val 
+}
+
+# update submodules
 git submodule init
 git submodule update --remote
 
@@ -14,16 +37,16 @@ IBC_V=v7
 WASMD_URL=github.com/CosmWasm/wasmd
 BLOCK_SDK_URL=github.com/skip-mev/block-sdk
 
-GOMOD=$1/initia/go.mod
-MINIGOMOD=$1/miniwasm/go.mod
-AWK_SCRIPT=$1/scripts/getver.awk
+GOMOD_PATH=$1/initia
+MINIWASM_GOMOD_PATH=$1/miniwasm
 
-COSMOS_SDK_VERSION=$(awk -f $AWK_SCRIPT -v expr="$COSMOS_URL" $GOMOD)
-COSMOS_PROTO_VERSION=$(awk -f $AWK_SCRIPT -v expr="$COSMOS_PROTO_URL" $GOMOD)
-IBC_VERSION=$(awk -f $AWK_SCRIPT -v expr="$IBC_URL/$IBC_V" $GOMOD)
-ICS_VERSION=$(awk -f $AWK_SCRIPT -v expr="$ICS_URL" $GOMOD)
-WASMD_VERSION=$(awk -f $AWK_SCRIPT -v expr="$WASMD_URL" $MINIGOMOD)
-BLOCK_SDK_VERSION=$(awk -f $AWK_SCRIPT -v expr="$BLOCK_SDK_URL" $GOMOD) 
+# get versions
+COSMOS_SDK_VERSION=`getver $COSMOS_URL $GOMOD_PATH`
+COSMOS_PROTO_VERSION=`getver $COSMOS_PROTO_URL $GOMOD_PATH`
+IBC_VERSION=`getver $IBC_URL/$IBC_V $GOMOD_PATH`
+ICS_VERSION=`getver $ICS_URL $GOMOD_PATH`
+BLOCK_SDK_VERSION=`getver $BLOCK_SDK_URL $GOMOD_PATH`
+WASMD_VERSION=`getver $WASMD_URL $MINIWASM_GOMOD_PATH`
 
 # if ICS_VERSION is v0.9.0, forced to set v0.10.0
 if [[ "$ICS_VERSION" == "v0.9.0" ]]; then
