@@ -12,6 +12,7 @@ fi
 
 case $1 in
 	"js") PREREQUISITES="protoc npm";;
+	"es") PREREQUISITES="protoc npm";;
 	"python") PREREQUISITES="protoc pip";;
 	"rust") PREREQUISITES="cargo";;
 	"java") PREREQUISITES="java gradle";;
