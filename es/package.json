@@ -1,15 +1,13 @@
 {
-  "name": "@initia/initia.proto",
+  "name": "@initia/initia.proto-es",
   "version": "0.1.18",
-  "description": "JS and TS types relating to Protocol Buffers used by Initia project",
+  "description": "ECMA Script types relating to Protocol Buffers used by Initia project",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/initia-labs/initia.proto"
   },
-  "publishConfig": {
-    "access": "public"
-  },
+  "private": true,
   "files": [
     "amino/",
     "cosmos/",
