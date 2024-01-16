@@ -23,7 +23,7 @@ THIRDPARTY_DIR="../third_party"
 protoc \
   --plugin="protoc-gen-ts_proto=${PROTOC_GEN_TS_PROTO_PATH}" \
   --ts_proto_out="${OUT_DIR}" \
-  --ts_proto_opt="esModuleInterop=true,forceLong=long,useOptionals=true,outputClientImpl=grpc-web" \
+  --ts_proto_opt="useMapType=true,useExactTypes=false,esModuleInterop=true,forceLong=long,useOptionals=true,outputClientImpl=grpc-web" \
   --proto_path="$INITIA_DIR" \
   --proto_path="$COSMOS_DIR" \
   --proto_path="$COSMOS_PROTO_DIR" \
