@@ -22,6 +22,3 @@
 [submodule "cosmos-sdk"]
 	path = cosmos-sdk
 	url = git@github.com:initia-labs/cosmos-sdk.git
-[submodule "slinky"]
-	path = slinky
-	url = git@github.com:initia-labs/slinky.git
