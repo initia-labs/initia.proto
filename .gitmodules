@@ -24,4 +24,4 @@
 	url = git@github.com:initia-labs/cosmos-sdk.git
 [submodule "slinky"]
 	path = slinky
-	url = git@github.com:initia-labs/slinky.git
+	url = git@github.com:skip-mev/slinky.git
