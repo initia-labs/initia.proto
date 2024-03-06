@@ -5,7 +5,7 @@ plugins {
     id("signing")
     id("maven-publish")
     kotlin("jvm") version "1.8.21" apply false
-    id("com.google.protobuf") version "0.9.3"
+    id("com.google.protobuf") version "0.9.4"
 }
 
 allprojects {
@@ -42,8 +42,8 @@ allprojects {
     }
 
     java {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
 
         withSourcesJar()
         withJavadocJar()
@@ -102,8 +102,7 @@ allprojects {
 dependencies {
     val protobufVersion: String by project
 
-    api("com.google.protobuf:protobuf-java:$protobufVersion")
-    api("com.google.protobuf:protobuf-java-util:$protobufVersion")
+    api("com.google.protobuf:protobuf-javalite:$protobufVersion")
 
     compileOnly("javax.annotation:javax.annotation-api:1.3.2")
 }

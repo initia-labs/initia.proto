@@ -15,6 +15,7 @@ case $1 in
 	"python") PREREQUISITES="protoc pip";;
 	"rust") PREREQUISITES="cargo";;
 	"java") PREREQUISITES="java gradle";;
+	"java-alt") PREREQUISITES="protoc-gen-quickbuf";;
 	"swift") PREREQUISITES="protoc protoc-gen-swift";;
 	"csharp") PREREQUISITES="dotnet grpc_csharp_plugin";; 
 	"unity") PREREQUISITES="protogen";; 
