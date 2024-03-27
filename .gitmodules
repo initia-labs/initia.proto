@@ -25,3 +25,6 @@
 [submodule "slinky"]
 	path = slinky
 	url = git@github.com:skip-mev/slinky.git
+[submodule "minievm"]
+	path = minievm
+	url = git@github.com:initia-labs/minievm.git
