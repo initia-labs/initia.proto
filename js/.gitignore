@@ -10,6 +10,8 @@ node_modules
 /google/
 /ibc/
 /initia/
+/minievm/
+/miniwasm/
 /intertx/
 /tendermint/
 /amino/

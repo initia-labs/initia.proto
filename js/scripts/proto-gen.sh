@@ -11,6 +11,8 @@ mkdir -p "$OUT_DIR"
 
 echo "Processing initia proto files ..."
 INITIA_DIR="../initia/proto"
+MINIWASM_DIR="../miniwasm/proto"
+MINIEVM_DIR="../minievm/proto"
 COSMOS_DIR="../cosmos-sdk/proto"
 COSMOS_PROTO_DIR="../cosmos-proto/proto"
 IBC_DIR="../ibc-go/proto"
@@ -25,6 +27,8 @@ protoc \
   --ts_proto_out="${OUT_DIR}" \
   --ts_proto_opt="useMapType=true,useExactTypes=false,esModuleInterop=true,forceLong=long,useOptionals=true,outputClientImpl=grpc-web" \
   --proto_path="$INITIA_DIR" \
+  --proto_path="$MINIWASM_DIR" \
+  --proto_path="$MINIEVM_DIR" \
   --proto_path="$COSMOS_DIR" \
   --proto_path="$COSMOS_PROTO_DIR" \
   --proto_path="$IBC_DIR" \
@@ -33,4 +37,4 @@ protoc \
   --proto_path="$SDK_DIR" \
   --proto_path="$SLINKY_DIR" \
   --proto_path="$THIRDPARTY_DIR" \
-  $(find ${INITIA_DIR} ${COSMOS_DIR} ${COSMOS_PROTO_DIR} ${IBC_DIR} ${ICS_DIR} ${WASMD_DIR} ${SDK_DIR} ${SLINKY_DIR} ${THIRDPARTY_DIR} -path -prune -o -name '*.proto' -print0 | xargs -0)
+  $(find ${INITIA_DIR} ${MINIWASM_DIR} ${MINIEVM_DIR} ${COSMOS_DIR} ${COSMOS_PROTO_DIR} ${IBC_DIR} ${ICS_DIR} ${WASMD_DIR} ${SDK_DIR} ${SLINKY_DIR} ${THIRDPARTY_DIR} -path -prune -o -name '*.proto' -print0 | xargs -0)
