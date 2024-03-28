@@ -1,6 +1,6 @@
 {
   "name": "@initia/initia.proto",
-  "version": "0.1.28",
+  "version": "0.1.30",
   "description": "JS and TS types relating to Protocol Buffers used by Initia project",
   "license": "Apache-2.0",
   "repository": {
@@ -12,6 +12,7 @@
   },
   "files": [
     "amino/",
+    "celestia/",
     "cosmos/",
     "cosmos_proto/",
     "cosmwasm/",
