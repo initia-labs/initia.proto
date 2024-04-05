@@ -11,7 +11,8 @@ pub use prost;
 pub use prost_types::Any;
 
 // we use tendermint.*.rs in prost instead of tendermint-rs
-//pub use tendermint_proto as tendermint;
+pub use tendermint_proto as tendermint;
+
 
 /// Cosmos protobuf definitions.
 pub mod cosmos {
@@ -81,12 +82,6 @@ pub mod cosmos {
             }
         }
 
-        pub mod kv {
-            pub mod v1beta1 {
-                include!("proto/cosmos.base.kv.v1beta1.rs");
-            }
-        }
-
         pub mod node {
             pub mod v1beta1 {
                 include!("proto/cosmos.base.node.v1beta1.rs");
@@ -111,39 +106,26 @@ pub mod cosmos {
             }
         }
 
-        /// Snapshot support.
-        pub mod snapshots {
-            pub mod v1beta1 {
-                include!("proto/cosmos.base.snapshots.v1beta1.rs");
-            }
-        }
-
-        /// Store support.
-        pub mod store {
-            pub mod v1beta1 {
-                include!("proto/cosmos.base.store.v1beta1.rs");
-            }
-        }
-
-        pub mod v1beta1 {
-            include!("proto/cosmos.base.v1beta1.rs");
-        }
 
         pub mod tendermint {
             pub mod v1beta1 {
                 include!("proto/cosmos.base.tendermint.v1beta1.rs");
             }
         }
+
+        pub mod v1beta1 {
+            include!("proto/cosmos.base.v1beta1.rs");
+        }
     }
 
-    pub mod capability {
+        pub mod circuit {
         pub mod module {
             pub mod v1 {
-                include!("proto/cosmos.capability.module.v1.rs");
+                include!("proto/cosmos.circuit.module.v1.rs");
             }
         }
-        pub mod v1beta1 {
-            include!("proto/cosmos.capability.v1beta1.rs");
+        pub mod v1 {
+            include!("proto/cosmos.circuit.v1.rs");
         }
     }
 
@@ -153,11 +135,10 @@ pub mod cosmos {
                 include!("proto/cosmos.consensus.module.v1.rs");
             }
         }
-        pub mod v1{
+        pub mod v1 {
             include!("proto/cosmos.consensus.v1.rs");
         }
     }
-
 
     /// Crisis handling
     pub mod crisis {
@@ -257,7 +238,7 @@ pub mod cosmos {
                 include!("proto/cosmos.gov.module.v1.rs");
             }
         }
-        pub mod v1{
+        pub mod v1 {
             include!("proto/cosmos.gov.v1.rs");
         }
         pub mod v1beta1 {
@@ -271,7 +252,7 @@ pub mod cosmos {
                 include!("proto/cosmos.group.module.v1.rs");
             }
         }
-        pub mod v1{
+        pub mod v1 {
             include!("proto/cosmos.group.v1.rs");
         }
     }
@@ -295,7 +276,7 @@ pub mod cosmos {
         }
     }
 
-    pub mod nft{
+    pub mod nft {
         pub mod module {
             pub mod v1 {
                 include!("proto/cosmos.nft.module.v1.rs");
@@ -306,7 +287,7 @@ pub mod cosmos {
         }
     }
 
-    pub mod orm{
+    pub mod orm {
         pub mod module {
             pub mod v1alpha1 {
                 include!("proto/cosmos.orm.module.v1alpha1.rs");
@@ -317,10 +298,10 @@ pub mod cosmos {
                 include!("proto/cosmos.orm.query.v1alpha1.rs");
             }
         }
-        pub mod v1{
+        pub mod v1 {
             include!("proto/cosmos.orm.v1.rs");
         }
-        pub mod v1alpha1{
+        pub mod v1alpha1 {
             include!("proto/cosmos.orm.v1alpha1.rs");
         }
     }
@@ -338,7 +319,7 @@ pub mod cosmos {
     }
 
     pub mod reflection {
-        pub mod v1{
+        pub mod v1 {
             include!("proto/cosmos.reflection.v1.rs");
         }
     }
@@ -367,9 +348,36 @@ pub mod cosmos {
         }
     }
 
+    pub mod store {
+        pub mod internal {
+            pub mod kv {
+            pub mod v1beta1 {
+                include!("proto/cosmos.store.internal.kv.v1beta1.rs");
+            }
+        }
+        }
+
+        pub mod snapshots {
+            pub mod v1{
+                include!("proto/cosmos.store.snapshots.v1.rs");
+            }
+        }
+
+        pub mod streaming {
+            pub mod abci {
+                include!("proto/cosmos.store.streaming.abci.rs");
+            }
+        }
+
+
+        pub mod v1beta1 {
+            include!("proto/cosmos.store.v1beta1.rs");
+        }
+    }
+
     /// Transactions.
     pub mod tx {
-        pub mod config{
+        pub mod config {
             pub mod v1 {
                 include!("proto/cosmos.tx.config.v1.rs");
             }
@@ -410,9 +418,7 @@ pub mod cosmos {
             include!("proto/cosmos.vesting.v1beta1.rs");
         }
     }
-
 }
-
 
 /// IBC protobuf definitions.
 pub mod ibc {
@@ -425,6 +431,17 @@ pub mod ibc {
             }
         }
 
+        pub mod fetchprice {
+            pub mod module {
+                pub mod v1 {
+                    include!("proto/ibc.applications.fetchprice.module.v1.rs");
+                }
+            }
+            pub mod v1 {
+                include!("proto/ibc.applications.fetchprice.v1.rs");
+            }
+        }
+
         /// Interchain accounts support.
         pub mod interchain_accounts {
             pub mod controller {
@@ -433,7 +450,7 @@ pub mod ibc {
                 }
             }
 
-            pub mod genesis{
+            pub mod genesis {
                 pub mod v1 {
                     include!("proto/ibc.applications.interchain_accounts.genesis.v1.rs");
                 }
@@ -453,12 +470,6 @@ pub mod ibc {
         pub mod nft_transfer {
             pub mod v1 {
                 include!("proto/ibc.applications.nft_transfer.v1.rs");
-            }
-        }
-
-        pub mod sft_transfer {
-            pub mod v1 {
-                include!("proto/ibc.applications.sft_transfer.v1.rs");
             }
         }
 
@@ -533,11 +544,22 @@ pub mod ibc {
                 include!("proto/ibc.lightclients.tendermint.v1.rs");
             }
         }
+                pub mod wasm {
+            pub mod v1 {
+                include!("proto/ibc.lightclients.wasm.v1.rs");
+            }
+        }
     }
 }
 
-
 pub mod initia {
+
+    pub mod bank {
+        pub mod v1 {
+            include!("proto/initia.bank.v1.rs");
+        }
+    }
+
     pub mod distribution {
         pub mod module {
             pub mod v1 {
@@ -546,6 +568,23 @@ pub mod initia {
         }
         pub mod v1 {
             include!("proto/initia.distribution.v1.rs");
+        }
+    }
+
+    pub mod gov {
+        pub mod v1 {
+            include!("proto/initia.gov.v1.rs");
+        }
+    }
+
+    pub mod ibchooks {
+        pub mod module {
+            pub mod v1 {
+                include!("proto/initia.ibchooks.module.v1.rs");
+            }
+        }
+        pub mod v1 {
+            include!("proto/initia.ibchooks.v1.rs");
         }
     }
 
@@ -571,7 +610,7 @@ pub mod initia {
         }
     }
 
-    pub mod mstaking{
+    pub mod mstaking {
         pub mod module {
             pub mod v1 {
                 include!("proto/initia.mstaking.module.v1.rs");
@@ -582,7 +621,7 @@ pub mod initia {
         }
     }
 
-    pub mod reward{
+    pub mod reward {
         pub mod module {
             pub mod v1 {
                 include!("proto/initia.reward.module.v1.rs");
@@ -590,6 +629,126 @@ pub mod initia {
         }
         pub mod v1 {
             include!("proto/initia.reward.v1.rs");
+        }
+    }
+}
+
+pub mod celestia {
+    pub mod blob {
+        pub mod v1 {
+            include!("proto/celestia.blob.v1.rs");
+        }
+    }
+
+    pub mod core {
+        pub mod v1 {
+            pub mod blob {
+                include!("proto/celestia.core.v1.blob.rs");
+            }
+        }
+    }
+}
+
+pub mod sdk {
+    pub mod auction {
+        pub mod module {
+            pub mod v1 {
+                include!("proto/sdk.auction.module.v1.rs");
+            }
+        }
+        pub mod v1 {
+            include!("proto/sdk.auction.v1.rs");
+        }
+    }
+
+    pub mod blocksdk {
+        pub mod module {
+            pub mod v1 {
+                include!("proto/sdk.blocksdk.module.v1.rs");
+            }
+        }
+        pub mod v1 {
+            include!("proto/sdk.blocksdk.v1.rs");
+        }
+    }
+
+    pub mod mempool {
+        pub mod v1 {
+            include!("proto/sdk.mempool.v1.rs");
+        }
+    }
+
+    pub mod proposals {
+        pub mod v1 {
+            include!("proto/sdk.proposals.v1.rs");
+        }
+    }
+}
+
+pub mod capability {
+        pub mod v1 {
+            include!("proto/capability.v1.rs");
+        }
+}
+
+pub mod cosmos_proto {
+    include!("proto/cosmos_proto.rs");
+}
+
+pub mod slinky {
+    pub mod abci {
+        pub mod v1 {
+            include!("proto/slinky.abci.v1.rs");
+        }
+    }
+
+    pub mod alerts {
+        pub mod module {
+            pub mod v1 {
+                include!("proto/slinky.alerts.module.v1.rs");
+            }
+        }
+        pub mod v1 {
+            include!("proto/slinky.alerts.v1.rs");
+        }
+    }
+
+    pub mod incentives {
+        pub mod module {
+            pub mod v1 {
+                include!("proto/slinky.incentives.module.v1.rs");
+            }
+        }
+        pub mod v1 {
+            include!("proto/slinky.incentives.v1.rs");
+        }
+    }
+
+    pub mod oracle {
+        pub mod module {
+            pub mod v1 {
+                include!("proto/slinky.oracle.module.v1.rs");
+            }
+        }
+        pub mod v1 {
+            include!("proto/slinky.oracle.v1.rs");
+        }
+    }
+
+    pub mod service {
+        pub mod v1 {
+            include!("proto/slinky.service.v1.rs");
+        }
+    }
+
+    pub mod sla {
+        pub mod module {
+            pub mod v1 {
+                include!("proto/slinky.sla.module.v1.rs");
+            }
+        }
+        pub mod v1 {
+            include!("proto/slinky.sla.v1.rs");
         }
     }
 }
