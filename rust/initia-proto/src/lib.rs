@@ -661,17 +661,6 @@ pub mod sdk {
         }
     }
 
-    pub mod blocksdk {
-        pub mod module {
-            pub mod v1 {
-                include!("proto/sdk.blocksdk.module.v1.rs");
-            }
-        }
-        pub mod v1 {
-            include!("proto/sdk.blocksdk.v1.rs");
-        }
-    }
-
     pub mod mempool {
         pub mod v1 {
             include!("proto/sdk.mempool.v1.rs");
