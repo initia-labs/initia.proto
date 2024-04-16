@@ -28,3 +28,6 @@
 [submodule "minievm"]
 	path = minievm
 	url = git@github.com:initia-labs/minievm.git
+[submodule "forwarding"]
+	path = forwarding
+	url = git@github.com:noble-assets/forwarding.git

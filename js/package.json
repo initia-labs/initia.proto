@@ -1,6 +1,6 @@
 {
   "name": "@initia/initia.proto",
-  "version": "0.1.30",
+  "version": "0.1.33",
   "description": "JS and TS types relating to Protocol Buffers used by Initia project",
   "license": "Apache-2.0",
   "repository": {
@@ -22,6 +22,7 @@
     "initia/",
     "minievm/",
     "miniwasm/",
+    "noble/",
     "sdk/",
     "slinky/",
     "tendermint/",
