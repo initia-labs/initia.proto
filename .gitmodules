@@ -19,9 +19,6 @@
 [submodule "block-sdk"]
 	path = block-sdk
 	url = git@github.com:skip-mev/block-sdk.git
-[submodule "cosmos-sdk"]
-	path = cosmos-sdk
-	url = git@github.com:initia-labs/cosmos-sdk.git
 [submodule "slinky"]
 	path = slinky
 	url = git@github.com:skip-mev/slinky.git
@@ -31,3 +28,6 @@
 [submodule "forwarding"]
 	path = forwarding
 	url = git@github.com:noble-assets/forwarding.git
+[submodule "cosmos-sdk"]
+	path = cosmos-sdk
+	url = https://github.com/cosmos/cosmos-sdk
