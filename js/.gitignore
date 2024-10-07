@@ -19,5 +19,5 @@ node_modules
 /src/
 /cosmwasm/
 /sdk/
-/slinky/
+/connect/
 /noble/

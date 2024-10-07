@@ -19,7 +19,7 @@ IBC_DIR="../ibc-go/proto"
 ICS_DIR="../ics23/proto"
 WASMD_DIR="../wasmd/proto"
 SDK_DIR="../block-sdk/proto"
-SLINKY_DIR="../slinky/proto"
+CONNECT_DIR="../connect/proto"
 FORWARDING_DIR="../forwarding/proto"
 THIRDPARTY_DIR="../third_party"
 
@@ -36,7 +36,7 @@ protoc \
   --proto_path="$ICS_DIR" \
   --proto_path="$WASMD_DIR" \
   --proto_path="$SDK_DIR" \
-  --proto_path="$SLINKY_DIR" \
+  --proto_path="$CONNECT_DIR" \
   --proto_path="$FORWARDING_DIR" \
   --proto_path="$THIRDPARTY_DIR" \
-  $(find ${INITIA_DIR} ${MINIWASM_DIR} ${MINIEVM_DIR} ${COSMOS_DIR} ${COSMOS_PROTO_DIR} ${IBC_DIR} ${ICS_DIR} ${WASMD_DIR} ${SDK_DIR} ${SLINKY_DIR} ${FORWARDING_DIR} ${THIRDPARTY_DIR} -path -prune -o -name '*.proto' -print0 | xargs -0)
+  $(find ${INITIA_DIR} ${MINIWASM_DIR} ${MINIEVM_DIR} ${COSMOS_DIR} ${COSMOS_PROTO_DIR} ${IBC_DIR} ${ICS_DIR} ${WASMD_DIR} ${SDK_DIR} ${CONNECT_DIR} ${FORWARDING_DIR} ${THIRDPARTY_DIR} -path -prune -o -name '*.proto' -print0 | xargs -0)

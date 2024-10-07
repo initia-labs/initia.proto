@@ -32,12 +32,14 @@ git submodule update --remote
 COSMOS_URL=github.com/cosmos/cosmos-sdk
 COSMOS_PROTO_URL=github.com/cosmos/cosmos-proto
 IBC_URL=github.com/cosmos/ibc-go
-ICS_URL=github.com/confio/ics23/go
-IBC_V=v7
+ICS_URL=github.com/cosmos/ics23/go
+IBC_V=v8
 WASMD_URL=github.com/CosmWasm/wasmd
 BLOCK_SDK_URL=github.com/skip-mev/block-sdk
-SLINKY_URL=github.com/skip-mev/slinky
+CONNECT_URL=github.com/skip-mev/connect
+SKIP_V=v2
 FORWARDING_URL=github.com/noble-assets/forwarding
+NOBLE_V=v2
 
 GOMOD_PATH=$1/initia
 MINIWASM_GOMOD_PATH=$1/miniwasm
@@ -47,9 +49,9 @@ COSMOS_SDK_VERSION=`getver $COSMOS_URL $GOMOD_PATH`
 COSMOS_PROTO_VERSION=`getver $COSMOS_PROTO_URL $GOMOD_PATH`
 IBC_VERSION=`getver $IBC_URL/$IBC_V $GOMOD_PATH`
 ICS_VERSION=`getver $ICS_URL $GOMOD_PATH`
-BLOCK_SDK_VERSION=`getver $BLOCK_SDK_URL $GOMOD_PATH`
-SLINKY_VERSION=`getver $SLINKY_URL $GOMOD_PATH`
-FORWARDING_VERSION=`getver $FORWARDING_URL $GOMOD_PATH`
+BLOCK_SDK_VERSION=`getver $BLOCK_SDK_URL/$SKIP_V $GOMOD_PATH`
+CONNECT_VERSION=`getver $CONNECT_URL/$SKIP_V $GOMOD_PATH`
+FORWARDING_VERSION=`getver $FORWARDING_URL/$NOBLE_V $GOMOD_PATH`
 WASMD_VERSION=`getver $WASMD_URL $MINIWASM_GOMOD_PATH`
 
 # if ICS_VERSION is v0.9.0, forced to set v0.10.0
@@ -65,7 +67,7 @@ echo "IBC_VERSION: $IBC_VERSION"
 echo "ICS_VERSION: $ICS_VERSION"
 echo "WASMD_VERSION: $WASMD_VERSION"
 echo "BLOCK_SDK_VERSION: $BLOCK_SDK_VERSION"
-echo "SLINKY_VERSION: $SLINKY_VERSION"
+echo "CONNECT_VERSION: $CONNECT_VERSION"
 echo "FORWARDING_VERSION: $FORWARDING_VERSION"
 
 # they don't have branches for their releases. use tags instead
@@ -76,6 +78,6 @@ cd $1/ibc-go; git checkout $IBC_VERSION
 cd $1/ics23; git checkout go/$ICS_VERSION    # ics23's tag have a prefix "go/"
 cd $1/wasmd; git checkout $WASMD_VERSION
 cd $1/block-sdk; git checkout $BLOCK_SDK_VERSION
-cd $1/slinky; git checkout $SLINKY_VERSION
+cd $1/connect; git checkout $CONNECT_VERSION
 cd $1/forwarding; git checkout $FORWARDING_VERSION
 popd
