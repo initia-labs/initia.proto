@@ -26,7 +26,7 @@ THIRDPARTY_DIR="../third_party"
 protoc \
   --plugin="protoc-gen-ts_proto=${PROTOC_GEN_TS_PROTO_PATH}" \
   --ts_proto_out="${OUT_DIR}" \
-  --ts_proto_opt="useMapType=true,useExactTypes=false,esModuleInterop=true,forceLong=long,useOptionals=true,outputClientImpl=grpc-web,globalThisPolyfill=true" \
+  --ts_proto_opt="useMapType=true,useExactTypes=false,esModuleInterop=true,forceLong=bigint,useOptionals=true,outputClientImpl=grpc-web,globalThisPolyfill=true" \
   --proto_path="$INITIA_DIR" \
   --proto_path="$MINIWASM_DIR" \
   --proto_path="$MINIEVM_DIR" \
