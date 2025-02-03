@@ -4,7 +4,7 @@
 // TODO(tarcieri): leverage first-class support for type URLs in prost?
 // See: https://github.com/tokio-rs/prost/issues/299
 
-use crate::{cosmos, ibc, initia, traits::TypeUrl};
+use crate::{cosmos, ibc, initia, miniwasm, traits::TypeUrl};
 
 impl TypeUrl for cosmos::bank::v1beta1::MsgSend {
     const TYPE_URL: &'static str = "/cosmos.bank.v1beta1.MsgSend";
@@ -13,7 +13,7 @@ impl TypeUrl for cosmos::bank::v1beta1::MsgSend {
 impl TypeUrl for cosmos::bank::v1beta1::MsgMultiSend {
     const TYPE_URL: &'static str = "/cosmos.bank.v1beta1.MsgMultiSend";
 }
- 
+
 impl TypeUrl for cosmos::distribution::v1beta1::MsgSetWithdrawAddress {
     const TYPE_URL: &'static str = "/cosmos.distribution.v1beta1.MsgSetWithdrawAddress";
 }
@@ -82,36 +82,61 @@ impl TypeUrl for ibc::applications::transfer::v1::MsgTransfer {
     const TYPE_URL: &'static str = "/ibc.applications.transfer.v1.MsgTransfer";
 }
 
-impl TypeUrl for initia::mstaking::v1::MsgCreateValidator{
+impl TypeUrl for initia::mstaking::v1::MsgCreateValidator {
     const TYPE_URL: &'static str = "/initia.mstaking.v1.MsgCreateValidator";
 }
 
-impl TypeUrl for initia::mstaking::v1::MsgEditValidator{
+impl TypeUrl for initia::mstaking::v1::MsgEditValidator {
     const TYPE_URL: &'static str = "/initia.mstaking.v1.MsgEditValidator";
 }
 
-impl TypeUrl for initia::mstaking::v1::MsgDelegate{
+impl TypeUrl for initia::mstaking::v1::MsgDelegate {
     const TYPE_URL: &'static str = "/initia.mstaking.v1.MsgDelegate";
 }
 
-impl TypeUrl for initia::mstaking::v1::MsgBeginRedelegate{
+impl TypeUrl for initia::mstaking::v1::MsgBeginRedelegate {
     const TYPE_URL: &'static str = "/initia.mstaking.v1.MsgBeginRedelegate";
 }
 
-impl TypeUrl for initia::mstaking::v1::MsgUndelegate{
+impl TypeUrl for initia::mstaking::v1::MsgUndelegate {
     const TYPE_URL: &'static str = "/initia.mstaking.v1.MsgUndelegate";
 }
 
-impl TypeUrl for initia::r#move::v1::MsgPublish{
+impl TypeUrl for initia::r#move::v1::MsgPublish {
     const TYPE_URL: &'static str = "/initia.move.v1.MsgPublish";
 }
 
-impl TypeUrl for initia::r#move::v1::MsgExecute{
+impl TypeUrl for initia::r#move::v1::MsgExecute {
     const TYPE_URL: &'static str = "/initia.move.v1.MsgExecute";
 }
 
-impl TypeUrl for initia::r#move::v1::MsgScript{
+impl TypeUrl for initia::r#move::v1::MsgScript {
     const TYPE_URL: &'static str = "/initia.move.v1.MsgScript";
 }
 
+impl TypeUrl for miniwasm::tokenfactory::v1::MsgCreateDenom {
+    const TYPE_URL: &'static str = "/miniwasm.tokenfactory.v1.MsgCreateDenom";
+}
+
+impl TypeUrl for miniwasm::tokenfactory::v1::MsgMint {
+    const TYPE_URL: &'static str = "/miniwasm.tokenfactory.v1.MsgMint";
+}
+
+impl TypeUrl for miniwasm::tokenfactory::v1::MsgBurn {
+    const TYPE_URL: &'static str = "/miniwasm.tokenfactory.v1.MsgBurn";
+}
+
+impl TypeUrl for miniwasm::tokenfactory::v1::MsgChangeAdmin {
+    const TYPE_URL: &'static str = "/miniwasm.tokenfactory.v1.MsgChangeAdmin";
+}
+
+impl TypeUrl for miniwasm::tokenfactory::v1::MsgSetBeforeSendHook {
+    const TYPE_URL: &'static str = "/miniwasm.tokenfactory.v1.MsgSetBeforeSendHook";
+}
+
+impl TypeUrl for miniwasm::tokenfactory::v1::MsgSetDenomMetadata {
+    const TYPE_URL: &'static str = "/miniwasm.tokenfactory.v1.MsgSetDenomMetadata";
+}
+
 // no msgs for tendermint
+

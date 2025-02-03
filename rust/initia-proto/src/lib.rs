@@ -669,3 +669,11 @@ pub mod capability {
 pub mod cosmos_proto {
     include!("proto/cosmos_proto.rs");
 }
+
+pub mod miniwasm {
+    pub mod tokenfactory {
+        pub mod v1 {
+            include!("proto/miniwasm.tokenfactory.v1.rs");
+        }
+    }
+}
