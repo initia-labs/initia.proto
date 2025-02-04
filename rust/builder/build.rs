@@ -35,6 +35,7 @@ const ICS_DIR: &str = "../../ics23/proto";
 const SDK_DIR: &str = "../../block-sdk/proto";
 const SLINKY_DIR: &str = "../../slinky/proto";
 const THIRDPARTY_DIR: &str = "../../third_party";
+const MINIWASM_PROTO_DIR: &str = "../../miniwasm/proto";
 
 /// A temporary directory for proto building
 const TMP_BUILD_DIR: &str = "/tmp/tmp-protobuf/";
@@ -86,7 +87,10 @@ fn main() {
     run_rustfmt(&output_dir);
 
     if is_github() {
-        println!("Rebuild protos with proto-build (initia rev: {})", INITIA_REV);
+        println!(
+            "Rebuild protos with proto-build (initia rev: {})",
+            INITIA_REV
+        );
     }
 }
 
@@ -164,12 +168,14 @@ fn compile_initia_protos_and_services(out_dir: &Path) {
         SDK_DIR.to_owned(),
         SLINKY_DIR.to_owned(),
         THIRDPARTY_DIR.to_owned(),
+        MINIWASM_PROTO_DIR.to_owned(),
     ];
 
     // Paths
     let proto_paths = [
         INITIA_DIR.to_owned(),
-        /* 
+        MINIWASM_PROTO_DIR.to_owned(),
+        /*
         format!("{}/proto/initia/distribution", sdk_dir.display()),
         format!("{}/proto/initia/mint", sdk_dir.display()),
         format!("{}/proto/initia/move", sdk_dir.display()),
@@ -212,7 +218,7 @@ fn compile_dependent_protos_and_services(out_dir: &Path) {
     // List available paths for dependencies
     let includes: Vec<PathBuf> = proto_includes_paths.iter().map(PathBuf::from).collect();
 
-        // Paths
+    // Paths
     let proto_paths = [
         COSMOS_DIR.to_owned(),
         COSMOS_PROTO_DIR.to_owned(),
@@ -221,7 +227,7 @@ fn compile_dependent_protos_and_services(out_dir: &Path) {
         SDK_DIR.to_owned(),
         SLINKY_DIR.to_owned(),
         THIRDPARTY_DIR.to_owned(),
-        /* 
+        /*
         format!("{}/proto/confio/auth", thirdparty_dir.display()),
         format!("{}/proto/cosmos/auth", thirdparty_dir.display()),
         format!("{}/proto/cosmos/authz", thirdparty_dir.display()),
@@ -249,7 +255,6 @@ fn compile_dependent_protos_and_services(out_dir: &Path) {
         format!("{}/proto/ibc", thirdparty_dir.display()),
         format!("{}/proto/tendermint", thirdparty_dir.display()),
         */
-
     ];
 
     // List available proto files
@@ -347,7 +352,7 @@ fn copy_and_patch(src: impl AsRef<Path>, dest: impl AsRef<Path>) -> io::Result<(
              #[cfg_attr(docsrs, doc(cfg(feature = \"grpc\")))]",
         ),
     ];
-    
+
     // Skip proto files belonging to `EXCLUDED_PROTO_PACKAGES`
     for package in EXCLUDED_PROTO_PACKAGES {
         if let Some(filename) = src.as_ref().file_name().and_then(OsStr::to_str) {
@@ -400,9 +405,11 @@ fn apply_patches(output_dir: &Path) {
     fs::rename(
         &output_dir.join("initia.r#move.v1.rs"),
         &output_dir.join("initia.move.v1.rs"),
-    ).unwrap();
+    )
+    .unwrap();
     fs::rename(
         &output_dir.join("initia.r#move.module.v1.rs"),
         &output_dir.join("initia.move.module.v1.rs"),
-    ).unwrap();
+    )
+    .unwrap();
 }

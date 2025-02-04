@@ -13,7 +13,6 @@ pub use prost_types::Any;
 // we use tendermint.*.rs in prost instead of tendermint-rs
 pub use tendermint_proto as tendermint;
 
-
 /// Cosmos protobuf definitions.
 pub mod cosmos {
 
@@ -106,7 +105,6 @@ pub mod cosmos {
             }
         }
 
-
         pub mod tendermint {
             pub mod v1beta1 {
                 include!("proto/cosmos.base.tendermint.v1beta1.rs");
@@ -118,7 +116,7 @@ pub mod cosmos {
         }
     }
 
-        pub mod circuit {
+    pub mod circuit {
         pub mod module {
             pub mod v1 {
                 include!("proto/cosmos.circuit.module.v1.rs");
@@ -351,14 +349,14 @@ pub mod cosmos {
     pub mod store {
         pub mod internal {
             pub mod kv {
-            pub mod v1beta1 {
-                include!("proto/cosmos.store.internal.kv.v1beta1.rs");
+                pub mod v1beta1 {
+                    include!("proto/cosmos.store.internal.kv.v1beta1.rs");
+                }
             }
-        }
         }
 
         pub mod snapshots {
-            pub mod v1{
+            pub mod v1 {
                 include!("proto/cosmos.store.snapshots.v1.rs");
             }
         }
@@ -368,7 +366,6 @@ pub mod cosmos {
                 include!("proto/cosmos.store.streaming.abci.rs");
             }
         }
-
 
         pub mod v1beta1 {
             include!("proto/cosmos.store.v1beta1.rs");
@@ -428,17 +425,6 @@ pub mod ibc {
         pub mod fee {
             pub mod v1 {
                 include!("proto/ibc.applications.fee.v1.rs");
-            }
-        }
-
-        pub mod fetchprice {
-            pub mod module {
-                pub mod v1 {
-                    include!("proto/ibc.applications.fetchprice.module.v1.rs");
-                }
-            }
-            pub mod v1 {
-                include!("proto/ibc.applications.fetchprice.v1.rs");
             }
         }
 
@@ -544,7 +530,7 @@ pub mod ibc {
                 include!("proto/ibc.lightclients.tendermint.v1.rs");
             }
         }
-                pub mod wasm {
+        pub mod wasm {
             pub mod v1 {
                 include!("proto/ibc.lightclients.wasm.v1.rs");
             }
@@ -675,69 +661,19 @@ pub mod sdk {
 }
 
 pub mod capability {
-        pub mod v1 {
-            include!("proto/capability.v1.rs");
-        }
+    pub mod v1 {
+        include!("proto/capability.v1.rs");
+    }
 }
 
 pub mod cosmos_proto {
     include!("proto/cosmos_proto.rs");
 }
 
-pub mod slinky {
-    pub mod abci {
+pub mod miniwasm {
+    pub mod tokenfactory {
         pub mod v1 {
-            include!("proto/slinky.abci.v1.rs");
-        }
-    }
-
-    pub mod alerts {
-        pub mod module {
-            pub mod v1 {
-                include!("proto/slinky.alerts.module.v1.rs");
-            }
-        }
-        pub mod v1 {
-            include!("proto/slinky.alerts.v1.rs");
-        }
-    }
-
-    pub mod incentives {
-        pub mod module {
-            pub mod v1 {
-                include!("proto/slinky.incentives.module.v1.rs");
-            }
-        }
-        pub mod v1 {
-            include!("proto/slinky.incentives.v1.rs");
-        }
-    }
-
-    pub mod oracle {
-        pub mod module {
-            pub mod v1 {
-                include!("proto/slinky.oracle.module.v1.rs");
-            }
-        }
-        pub mod v1 {
-            include!("proto/slinky.oracle.v1.rs");
-        }
-    }
-
-    pub mod service {
-        pub mod v1 {
-            include!("proto/slinky.service.v1.rs");
-        }
-    }
-
-    pub mod sla {
-        pub mod module {
-            pub mod v1 {
-                include!("proto/slinky.sla.module.v1.rs");
-            }
-        }
-        pub mod v1 {
-            include!("proto/slinky.sla.v1.rs");
+            include!("proto/miniwasm.tokenfactory.v1.rs");
         }
     }
 }
