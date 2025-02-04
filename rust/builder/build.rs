@@ -197,7 +197,7 @@ fn compile_initia_protos_and_services(out_dir: &Path) {
         .build_server(true)
         .out_dir(out_dir)
         .extern_path(".tendermint", "::tendermint_proto")
-        .compile(&protos, &includes)
+        .compile_protos(&protos, &includes)
         .unwrap();
 
     info!("=> Done!");
@@ -267,7 +267,7 @@ fn compile_dependent_protos_and_services(out_dir: &Path) {
         .build_client(true)
         .build_server(false)
         .out_dir(out_dir)
-        .compile(&protos, &includes)
+        .compile_protos(&protos, &includes)
         .unwrap();
 
     info!("=> Done!");
