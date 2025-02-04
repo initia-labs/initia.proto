@@ -5,8 +5,4 @@ proto generator for multiple languages
 - js
 - python
 - rust
-- csharp (c# with Grpc.Protobuf)
-- unity (c# with protobuf-net)
 - java
-- swift
-- cpp
