@@ -30,4 +30,4 @@
 	url = git@github.com:cosmos/cosmos-sdk.git
 [submodule "connect"]
 	path = connect
-	url = git@github.com:skip-mev/connect.git
+	url = git@github.com:initia-labs/connect.git
