@@ -1,6 +1,6 @@
 {
   "name": "@initia/initia.proto",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "JS and TS types relating to Protocol Buffers used by Initia project",
   "license": "Apache-2.0",
   "repository": {
@@ -35,16 +35,14 @@
   },
   "devDependencies": {
     "@types/google-protobuf": "^3.15.12",
-    "@types/long": "^5",
     "@types/node": "^20",
-    "prettier": "^2.7.1",
-    "ts-proto": "^1.181.1",
+    "prettier": "^3",
+    "ts-proto": "^2.7.5",
     "typescript": "^5"
   },
   "dependencies": {
+    "@bufbuild/protobuf": "^2.5.2",
     "@improbable-eng/grpc-web": "^0.15.0",
-    "google-protobuf": "^3.21.4",
-    "long": "^5.2.3",
-    "protobufjs": "^7.3.2"
+    "browser-headers": "^0.4.1"
   }
 }
