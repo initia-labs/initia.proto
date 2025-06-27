@@ -1,6 +1,6 @@
 {
   "name": "@initia/initia.proto",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "JS and TS types relating to Protocol Buffers used by Initia project",
   "license": "Apache-2.0",
   "repository": {
